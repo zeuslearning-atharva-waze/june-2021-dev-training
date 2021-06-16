@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="formstyles.css" />
+    <title>Document</title>
+    <script type="text/javascript">
+      function validateForm() {
+        var x = document.forms["myForm"]["yname"].value;
+        var y = document.forms["myForm"]["text"].value;
+        var z = document.forms["myForm"]["gender"].value;
+
+        if (x === "" || y === "" || z === "") {
+          alert("pls fill out all values");
+          return false;
+        }
+        //console.log(y);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="header">My first web page</div>
+      <div class="headerb"></div>
+    </div>
+    <div class="sections"><h2>What this is</h2></div>
+    <p>
+      Welcome to my first web page. I created this page without assistance of
+      webpage editor. Just my text editor and a
+      <strong>keen understanding of html</strong>
+    </p>
+    <div class="sections"><h2>Why this is</h2></div>
+
+    <ul>
+      <li>to learn HTML</li>
+      <li>List elements</li>
+      <ol>
+        <li>Home</li>
+        <li>FAQ</li>
+        <li>Contact</li>
+        <li>About</li>
+      </ol>
+      <li>here i have created ordered and unordered lists</li>
+    </ul>
+    <div class="sections"><h2>ZeusLearning.com</h2></div>
+    <a href="https://zeuslearning.com" target="_blank"
+      >this link will open zeuslearning.com in new tab</a
+    >
+    <div class="sections">
+      <h2>On click of following image navigate to Google.com</h2>
+    </div>
+    <div class="google">
+      <a href="https://google.com">
+        <img src="google.JPG" alt="google image"
+      /></a>
+    </div>
+    <h3>Some random table</h3>
+    <table border="grid">
+      <tr>
+        <td>Row 1 ,cell 1</td>
+        <td>Row 1 ,cell 2</td>
+        <td>Row 1 ,cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 2 ,cell 1</td>
+        <td>Row 2 ,cell 2</td>
+        <td>Row 2 ,cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 3 ,cell 1</td>
+        <td>Row 3 ,cell 2</td>
+        <td>Row 3 ,cell 3</td>
+      </tr>
+      <tr>
+        <td>Row 4 ,cell 1</td>
+        <td>Row 4 ,cell 2</td>
+        <td>Row 4 ,cell 3</td>
+      </tr>
+    </table>
+    <h3>Some random form</h3>
+    <p>
+      <strong><i>NOTE:</i></strong
+      >It looks the part, but won't do a thing
+    </p>
+    <form name="myForm" onsubmit="return validateForm()">
+      <label for="name">Name</label><br />
+      <br />
+      <input type="text" id="name" placeholder="Your name" name="yname" /><br />
+      <br />
+      <label for="text">Comments</label><br />
+      <br />
+      <textarea
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="your comments"
+        id="text"
+        style="overflow-y: scroll; resize: none"
+        name="text"
+      ></textarea>
+      <br />
+      <br />
+      Are you:
+      <br />
+      <br />
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label><br />
+      <br />
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label><br />
+      <br />
+      <button type="submit">Submit Query</button>
+    </form>
+  </body>
+</html>

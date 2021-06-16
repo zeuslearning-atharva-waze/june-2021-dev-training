@@ -1,0 +1,12 @@
+img {
+  height: 120px;
+
+  margin-right: 10px;
+}
+.border-div {
+  display: flex;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+}

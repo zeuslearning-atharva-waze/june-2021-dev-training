@@ -1,0 +1,50 @@
+body {
+  background-color: #fffccc;
+  margin: 10px;
+}
+
+.header {
+  background-color: maroon;
+  height: 40px;
+  text-align: center;
+  color: azure;
+  font-size: 30px;
+
+  font-style: italic;
+}
+.headerb {
+  background-color: red;
+  height: 15px;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.sections {
+  background-color: #089c04;
+}
+
+.sections > h2 {
+  color: azure;
+  padding-left: 10px;
+}
+
+ul {
+  color: maroon;
+}
+
+h3 {
+  color: grey;
+}
+
+table {
+  color: black;
+  background-color: silver;
+}
+
+img {
+  border-color: silver;
+  border-style: dashed;
+}
