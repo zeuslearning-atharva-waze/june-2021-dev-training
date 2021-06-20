@@ -1,0 +1,162 @@
+html,
+body {
+  margin: 0;
+  background-color: #eeeeee;
+}
+
+.aligner {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.navbar {
+  background-color: #25313f;
+  display: flex;
+  height: 56px;
+}
+.navbar > .navbar-brand {
+  color: white;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-left: 24px;
+}
+
+.navbar > .navbar-items {
+  margin-left: auto;
+  color: #3fd28b;
+  padding-top: 15px;
+  padding-right: 25px;
+}
+
+.nav-item-text {
+  padding-right: 33px;
+}
+
+.banner {
+  margin-top: 24px;
+
+  display: flex;
+  background-color: #8ddc97;
+  height: 64px;
+}
+
+.banner > .course,
+.class {
+  width: 756px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.banner > .course {
+  border-bottom: 5px solid black;
+}
+
+.summary {
+  margin-top: 37px;
+
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #00000029;
+}
+
+.summary > .csum {
+  color: #686868;
+  font-size: 12px;
+}
+
+.summary > .sort {
+  padding-top: 10px;
+  color: #686868;
+  font-size: 12px;
+}
+
+select {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #00000029;
+  background-color: #eeeeee;
+}
+
+.content {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 476px 476px;
+  grid-template-rows: 246px 246px;
+  grid-gap: 24px;
+}
+
+.card {
+  border: 1px solid black;
+}
+.card > .card-body {
+  display: flex;
+}
+
+.card-body > .card-detail {
+  margin-top: 24px;
+  margin-left: 16px;
+  width: 284px;
+}
+
+.card-detail > .card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-detail > .card-subtitle {
+  color: #686868;
+  font-size: 12px;
+}
+
+.card-detail > .card-subsubtitle {
+  padding-top: 7px;
+  color: #686868;
+  font-size: 12px;
+}
+
+strong {
+  color: black;
+}
+
+.card {
+  background-color: #ffffff;
+}
+.card > .card-body {
+  border-bottom: 1px solid #00000029;
+}
+
+.card-body > .card-img {
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-bottom: 16px;
+}
+.card-detail > .card-select {
+  margin-top: 18px;
+}
+
+.card-detail > .card-classd {
+  color: #686868;
+  font-size: 12px;
+}
+
+.card > .card-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer {
+  margin-top: 80px;
+  background-color: #e0e1e1;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer > .about {
+  padding-left: 680px;
+  color: #1f7a54;
+}
+
+.footer > .creds {
+  padding-left: 650px;
+}
