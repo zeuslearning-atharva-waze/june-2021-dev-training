@@ -1,3 +1,32 @@
+@media (min-width: 500px) and (max-width: 768px) {
+  #con {
+    margin-left: 90px;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 500px;
+    grid-template-rows: 246px 246px 246px 246px;
+    grid-gap: 24px;
+  }
+  .footer > .about {
+    padding-left: 300px;
+    color: black;
+  }
+
+  .footer > .creds {
+    padding-left: 300px;
+  }
+}
+@media (min-width: 800px) and (max-width: 1024px) {
+  .footer > .about {
+    padding-left: 400px;
+    color: black;
+  }
+
+  .footer > .creds {
+    padding-left: 400px;
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -69,12 +98,20 @@ body {
   font-size: 12px;
 }
 
-select {
+.select {
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #00000029;
   background-color: #eeeeee;
+}
+
+select {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #00000029;
+  background-color: white;
 }
 
 .content {
@@ -152,11 +189,11 @@ strong {
   flex-direction: column;
 }
 
-.footer > .about {
+.about {
   padding-left: 680px;
   color: #1f7a54;
 }
 
-.footer > .creds {
+.creds {
   padding-left: 650px;
 }
