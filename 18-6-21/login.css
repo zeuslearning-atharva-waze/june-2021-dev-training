@@ -1,0 +1,211 @@
+@media (min-width: 500px) and (max-width: 768px) {
+  .footer > .about {
+    padding-left: 319px;
+    color: #1f7a54;
+  }
+  .footer > .creds {
+    padding-left: 137px;
+  }
+  #log {
+    margin-left: 28px;
+    margin-top: 30px;
+    grid-column: 3/10;
+    background-color: #ffffff;
+    border-top: 5px solid #3ac7ec;
+  }
+}
+@media (min-width: 800px) and (max-width: 1024px) {
+  .footer > .about {
+    padding-left: 447px;
+    color: #1f7a54;
+  }
+
+  .footer > .creds {
+    padding-left: 259px;
+  }
+  #log {
+    margin-left: 110px;
+    margin-top: 30px;
+    grid-column: 3/10;
+    background-color: #ffffff;
+    border-top: 5px solid #3ac7ec;
+  }
+}
+@media (min-width: 1025px) and (max-width: 2560px) {
+  .footer > .about {
+    padding-left: 700px;
+    color: #1f7a54;
+  }
+
+  .footer > .creds {
+    background-color: #e0e1e1;
+    padding-left: 550px;
+  }
+  #log {
+    margin-left: 300px;
+    margin-top: 30px;
+    grid-column: 3/10;
+    background-color: #ffffff;
+    border-top: 5px solid #3ac7ec;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  background-color: #eeeeee;
+}
+
+.container {
+  display: grid;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 47px 550px 40px;
+
+  background-color: #eeeeee;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "l l l l l l l l l l l l"
+    "f f f f f f f f f f f f";
+}
+
+.heading {
+  padding-top: 5px;
+  padding-left: 20px;
+
+  color: white;
+  grid-area: h;
+  background-color: #25313f;
+}
+
+.header-img {
+  width: 100px;
+  height: 40px;
+}
+
+.login {
+  margin-top: 30px;
+  width: 450px;
+  height: 520px;
+  grid-column: 3/10;
+  background-color: #ffffff;
+  border-top: 5px solid #3ac7ec;
+}
+
+.login-header {
+  text-align: center;
+  display: flex;
+
+  margin-top: 16px;
+  font-size: 24px;
+  color: #222222;
+}
+
+.login-header > .login-img {
+  margin-left: 25px;
+  margin-right: 70px;
+}
+
+.radios > .school {
+  margin-left: 30px;
+}
+.form {
+  margin: 25px 25px;
+}
+
+.selectors {
+  height: 90px;
+
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+select {
+  width: 396px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.selector-label {
+  font-size: 12px;
+  color: #666666;
+}
+
+.inputs {
+  margin-top: 60px;
+
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userip {
+  width: 390px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.forgot {
+  margin-left: auto;
+  color: #1f7a54;
+  font-size: 14px;
+}
+
+.submit {
+  margin-top: 20px;
+  height: 90px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.submit input:checked ~ #remember {
+  background-color: #1f7a54;
+}
+
+.button {
+  align-self: center;
+  background-color: #3fd28b;
+  height: 40px;
+  width: 200px;
+  border: none;
+  box-shadow: 0px 3px 5px #0000003d;
+}
+
+.footer {
+  grid-area: f;
+  margin-top: 100px;
+  background: #e0e1e1;
+  display: flex;
+  flex-direction: column;
+}
+
+.about {
+  padding-left: 285px;
+  color: #1f7a54;
+}
+
+.creds {
+  display: flex;
+  background-color: #e0e1e1;
+  padding-left: 450px;
+  height: 40px;
+}
+
+.creds > .footertxt {
+  padding-left: 30px;
+  color: #616161;
+  font-size: 12px;
+  margin-top: 13px;
+  padding-top: 5px;
+}
+
+.creds > .footerimg {
+  margin-top: 13px;
+}
