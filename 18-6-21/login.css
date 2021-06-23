@@ -56,9 +56,16 @@ body {
   background-color: #eeeeee;
 }
 
+@font-face {
+  font-family: "Quicksand";
+  src: url("./quantum screen assets/Quicksand font 1/static/Quicksand-Medium.ttf")
+    format("truetype");
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
 .container {
   display: grid;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 47px 550px 40px;
 
@@ -86,7 +93,7 @@ body {
 .login {
   margin-top: 30px;
   width: 450px;
-  height: 520px;
+  height: 574px;
   grid-column: 3/10;
   background-color: #ffffff;
   border-top: 5px solid #3ac7ec;
@@ -106,17 +113,23 @@ body {
   margin-right: 70px;
 }
 
+.radios {
+  margin-top: 34px;
+}
 .radios > .school {
   margin-left: 30px;
+  font: inherit;
+  font-family: "Quicksand";
 }
 .form {
   margin: 25px 25px;
 }
 
 .selectors {
-  height: 90px;
-
-  margin-top: 20px;
+  height: 126px;
+  font: inherit;
+  font-family: "Quicksand";
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -127,6 +140,8 @@ select {
   border-top: none;
   border-left: none;
   border-right: none;
+  font: inherit;
+  font-family: "Quicksand";
 }
 
 .selector-label {
@@ -135,9 +150,10 @@ select {
 }
 
 .inputs {
-  margin-top: 60px;
-
-  height: 120px;
+  margin-top: 56px;
+  font: inherit;
+  font-family: "Quicksand";
+  height: 129px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -145,6 +161,8 @@ select {
 
 .userip {
   width: 390px;
+  font: inherit;
+  font-family: "Quicksand";
   border-top: none;
   border-left: none;
   border-right: none;
@@ -157,9 +175,10 @@ select {
 }
 
 .submit {
-  margin-top: 20px;
-  height: 90px;
-
+  margin-top: 26px;
+  height: 94px;
+  font: inherit;
+  font-family: "Quicksand";
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -175,6 +194,8 @@ select {
   height: 40px;
   width: 200px;
   border: none;
+  font: inherit;
+  font-family: "Quicksand";
   box-shadow: 0px 3px 5px #0000003d;
 }
 
@@ -184,6 +205,8 @@ select {
   background: #e0e1e1;
   display: flex;
   flex-direction: column;
+  font: inherit;
+  font-family: "Quicksand";
 }
 
 .about {
@@ -196,6 +219,8 @@ select {
   background-color: #e0e1e1;
   padding-left: 450px;
   height: 40px;
+  font: inherit;
+  font-family: "Quicksand";
 }
 
 .creds > .footertxt {
