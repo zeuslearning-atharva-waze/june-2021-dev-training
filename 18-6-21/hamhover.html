@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hamhover</title>
+  </head>
+  <style>
+    * {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: wheat;
+    }
+
+    .hamhover {
+      width: 280px;
+      height: fit-content;
+      background-color: #ffffff;
+      color: #1f7a54;
+    }
+    .hover-content {
+      height: 48px;
+      padding-top: 15px;
+      padding-left: 16px;
+
+      display: flex;
+      justify-content: space-between;
+    }
+    .arro {
+      margin-right: 24px;
+    }
+    .drop {
+      background-color: #f3f3f3;
+    }
+    .drop-down {
+      padding-left: 32px;
+    }
+    .arrow {
+      border: solid #1f7a54;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+
+    .up {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
+    .down {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+
+    /*mike hover stylessss*/
+    .mikehover-content-main {
+      height: 540px;
+      overflow-y: scroll;
+    }
+    div .mikehover-content-main::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    div .mikehover-content-main::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    div .mikehover-content-main::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+    .mikehover {
+      width: 315px;
+      height: 582px;
+      background-color: #ffffff;
+    }
+    .mikehover-content-main > .mikehover-content {
+      height: fit-content;
+      border-bottom: 1px solid #eeeeee;
+    }
+    .mikehover-content > .mikehover-text {
+      margin: 16px 16px;
+      height: fit-content;
+    }
+    .mikehover-text > .mh-text-head {
+      display: flex;
+      justify-content: space-between;
+    }
+    .mh-text-head > .mh-text-title {
+      font-size: 12px;
+    }
+
+    .mikehover-text > .mh-text-body {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .mh-text-foot > .mh-text-foot-course-info {
+      display: flex;
+      justify-content: space-between;
+      color: #6e6e6e;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+    .mh-text-foot-course {
+      margin-top: 8px;
+      font-size: 12px;
+      height: 15px;
+      color: #6e6e6e;
+    }
+    .mikehover-buttons {
+      display: flex;
+      text-align: center;
+      height: 38px;
+      color: #1f7a54;
+      justify-content: space-around;
+      box-shadow: 0px 1px 6px #0000003d;
+      border-radius: 0px 0px 2px 2px;
+      opacity: 1;
+      padding-top: 15px;
+      font-size: 14px;
+    }
+  </style>
+  <body>
+    <section id="ham">
+      <div class="hamhover">
+        <div class="hover-content"><span>DASHBOARD</span></div>
+        <div class="hover-content drop">
+          <span>CONTENT</span>
+          <div class="arro">
+            <i class="arrow up"></i>
+          </div>
+        </div>
+        <div class="hover-content drop drop-down">
+          <span>COURSE CATALOG</span>
+        </div>
+
+        <div id="users" class="hover-content">
+          <span>USERS</span>
+
+          <div class="arro">
+            <i class="arrow down"></i>
+          </div>
+        </div>
+        <div id="reports" class="hover-content">
+          <span>REPORTS</span>
+
+          <div class="arro">
+            <i class="arrow down"></i>
+          </div>
+        </div>
+        <div id="admin" class="hover-content">
+          <span>ADMIN</span>
+
+          <div class="arro">
+            <i class="arrow down"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <br />
+    <br />
+
+    <section id="mike">
+      <div class="mikehover">
+        <div class="mikehover-content-main">
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title"><span>PA:</span> Wilson Kumar</div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-body">
+                No classes will be held on 21st Nov
+              </div>
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files">
+                    2 files are attached
+                  </div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">PA: Samson White</div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-body">
+                Guest lecture on Geometry on 20th September
+              </div>
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files">
+                    2 files are attached
+                  </div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">PA: Wilson Kumar</div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-body">
+                Additional course materials available on request
+              </div>
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course">Course: Mathematics 101</div>
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">PA: Wilson Kumar</div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-body">
+                No classes will be held on 25th Dec
+              </div>
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title"><span>PA:</span> Wilson Kumar</div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-body">
+                No classes will be held on 21st Nov
+              </div>
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files">
+                    2 files are attached
+                  </div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title"><span>PA:</span> Wilson Kumar</div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-body">
+                No classes will be held on 21st Nov
+              </div>
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files">
+                    2 files are attached
+                  </div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mikehover-buttons">
+          <div class="mike-button"><span>SHOW ALL</span></div>
+          <div class="mike-button"><span>CREATE NEW</span></div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <br />
+    <br />
+    <section id="notif">
+      <div class="mikehover">
+        <div class="mikehover-content-main">
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">
+                  License for Introduction to Algebra has been assigned to your
+                  school
+                </div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">
+                  Lesson 3 Practice Worksheet overdue for Amy Santiago
+                </div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course">Course: Mathematics 101</div>
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 05:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">23 new students created</div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    14-Sep-2018 at 01:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">
+                  15 submissions ready for evaluation
+                </div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course">Class: Basics of Algebra</div>
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    13-Sep-2018 at 01:15 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">
+                  License for Basic Concepts in Geometry has been assigned to
+                  your... school
+                </div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">
+                  Lesson 3 Practice Worksheet overdue for Sam Diego
+                </div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course">
+                  Course: Advanced Mathematics
+                </div>
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">
+                  Lesson 3 Practice Worksheet overdue for Sam Diego
+                </div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course">
+                  Course: Advanced Mathematics
+                </div>
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mikehover-content">
+            <div class="mikehover-text">
+              <div class="mh-text-head">
+                <div class="mh-text-title">
+                  Lesson 3 Practice Worksheet overdue for Sam Diego
+                </div>
+                <div class="mh-checker"></div>
+              </div>
+
+              <div class="mh-text-foot">
+                <div class="mh-text-foot-course">
+                  Course: Advanced Mathematics
+                </div>
+                <div class="mh-text-foot-course-info">
+                  <div class="mh-text-foot-course-info-files"></div>
+                  <div class="mh-text-foot-course-info-date">
+                    15-Sep-2018 at 07:21 pm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mikehover-buttons">
+          <div class="mike-button"><span>SHOW ALL</span></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
