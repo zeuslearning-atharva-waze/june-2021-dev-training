@@ -1,0 +1,52 @@
+<div class="navbar">
+  <div class="navbar-brand">
+    <img
+      src="../../../assets/quantum screen assets/icons/logo used in header.svg"
+      alt=""
+    />
+  </div>
+  <div class="navbar-items">
+    <div class="nav-item-text" id="nitems">DASHBOARD</div>
+    <div class="nav-item-text" id="nitems">CONTENT</div>
+    <div class="nav-item-text" id="nitems">USERS</div>
+    <div class="nav-item-text" id="nitems">REPORTS</div>
+    <div class="svgs">
+      <div class="nav-item-text alertdiv">
+        <div class="bubble"><span>8</span></div>
+        <img
+          src="../../../assets/quantum screen assets/icons/alerts.svg"
+          class="nav-icon alert"
+          alt=""
+          (mouseover)="mOver('.bell')"
+          (mouseout)="mOut('.bell')"
+        />
+      </div>
+      <div class="nav-item-text mikediv">
+        <div class="bubble"><span>8</span></div>
+        <img
+          src="../../../assets/quantum screen assets/icons/announcements.svg"
+          class="nav-icon mikey"
+          alt=""
+          (mouseover)="mOver('.mike')"
+          (mouseout)="mOut('.mike')"
+        />
+      </div>
+      <div class="nav-item-text">
+        <img
+          src="../../../assets/quantum screen assets/icons/profile.JPG"
+          class="nav-icon"
+          alt=""
+        />
+      </div>
+      <div
+        class="nav-item-ham"
+        (mouseover)="mOver('.pig')"
+        (mouseout)="mOut('.pig')"
+      >
+        <div class="ham hamstick"></div>
+        <div class="ham hamstick"></div>
+        <div class="ham hamstick"></div>
+      </div>
+    </div>
+  </div>
+</div>

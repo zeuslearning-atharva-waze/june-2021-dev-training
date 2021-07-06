@@ -1,0 +1,66 @@
+.card > .card-body {
+  display: flex;
+}
+
+.card-body > .card-detail {
+  margin-top: 24px;
+  margin-left: 16px;
+  width: 284px;
+}
+
+.card-detail > .card-title {
+  display: flex;
+  justify-content: space-between;
+  font: normal normal medium 16px/20px Quicksand;
+}
+
+.card-detail > .card-subtitle {
+  color: #686868;
+  font-size: 12px;
+}
+
+.card-detail > .card-subsubtitle {
+  padding-top: 7px;
+  color: #686868;
+  font-size: 12px;
+}
+
+strong {
+  color: black;
+}
+
+.card {
+  background-color: #ffffff;
+}
+.card > .card-body {
+  border-bottom: 1px solid #00000029;
+}
+
+.card-body > .card-img {
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-bottom: 16px;
+}
+.card-detail > .card-select {
+  margin-top: 18px;
+}
+
+.card-detail > .card-classd {
+  color: #686868;
+  font-size: 12px;
+}
+
+.card > .card-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+select {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #00000029;
+  background-color: white;
+  width: 264px;
+}

@@ -1,0 +1,128 @@
+@media (min-width: 500px) and (max-width: 768px) {
+  #log {
+    margin-left: 150px;
+    margin-top: 30px;
+
+    background-color: #ffffff;
+    border-top: 5px solid #3ac7ec;
+  }
+}
+@media (min-width: 800px) and (max-width: 1024px) {
+  #log {
+    margin-left: 280px;
+    margin-top: 30px;
+
+    background-color: #ffffff;
+    border-top: 5px solid #3ac7ec;
+  }
+}
+@media (min-width: 1025px) and (max-width: 2560px) {
+  #log {
+    margin-left: 500px;
+    margin-top: 30px;
+    grid-column: 3/10;
+    background-color: #ffffff;
+    border-top: 5px solid #3ac7ec;
+  }
+}
+
+.login {
+  margin-top: 30px;
+  width: 450px;
+  height: 574px;
+
+  grid-area: l;
+  background-color: #ffffff;
+  border-top: 5px solid #3ac7ec;
+  border-radius: 2px 2px 0px 0px;
+
+  .login-header {
+    text-align: center;
+    display: flex;
+
+    margin-top: 16px;
+    font-size: 24px;
+    color: #222222;
+  }
+
+  .login-header > .login-img {
+    margin-left: 25px;
+    margin-right: 70px;
+  }
+
+  .radios {
+    margin-top: 34px;
+  }
+  .radios > .school {
+    margin-left: 30px;
+  }
+  .form {
+    margin: 25px 25px;
+  }
+
+  .selectors {
+    height: 126px;
+    font: inherit;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  select {
+    width: 396px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font: inherit;
+    font-family: "Quicksand";
+  }
+
+  .selector-label {
+    font-size: 12px;
+    color: #666666;
+  }
+
+  .inputs {
+    margin-top: 56px;
+
+    height: 129px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .userip {
+    width: 390px;
+    font: inherit;
+    font-family: "Quicksand";
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .forgot {
+    margin-left: auto;
+    color: #1f7a54;
+    font-size: 14px;
+  }
+
+  .submit {
+    margin-top: 26px;
+    height: 94px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .button {
+    align-self: center;
+    background-color: #3fd28b;
+    height: 40px;
+    width: 200px;
+    border: none;
+
+    box-shadow: 0px 3px 5px #0000003d;
+  }
+}

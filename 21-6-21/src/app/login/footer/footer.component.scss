@@ -1,0 +1,71 @@
+@media (min-width: 500px) and (max-width: 768px) {
+  .footer > .about {
+    background-color: #eeeeee;
+    padding-left: 319px;
+    color: #1f7a54;
+  }
+  .footer > .creds {
+    padding-left: 137px;
+    height: 47px;
+  }
+}
+@media (min-width: 800px) and (max-width: 1024px) {
+  .footer > .about {
+    background-color: #eeeeee;
+    padding-left: 447px;
+    color: #1f7a54;
+  }
+
+  .footer > .creds {
+    padding-left: 259px;
+    height: 47px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 2560px) {
+  .footer > .about {
+    background-color: #eeeeee;
+    padding-left: 660px;
+    color: #1f7a54;
+  }
+
+  .footer > .creds {
+    background-color: #e0e1e1;
+    padding-left: 490px;
+    height: 47px;
+  }
+}
+
+.footer {
+  grid-area: f;
+  margin-top: 100px;
+  background: #e0e1e1;
+  display: flex;
+  flex-direction: column;
+  font: inherit;
+  font-family: "Quicksand";
+  height: 47px;
+}
+
+.about {
+  padding-left: 285px;
+  color: #1f7a54;
+}
+
+.creds {
+  display: flex;
+  background-color: #e0e1e1;
+  padding-left: 450px;
+  height: 40px;
+}
+
+.creds > .footertxt {
+  padding-left: 30px;
+  color: #616161;
+  font-size: 12px;
+  margin-top: 13px;
+  padding-top: 5px;
+}
+
+.creds > .footerimg {
+  margin-top: 13px;
+}

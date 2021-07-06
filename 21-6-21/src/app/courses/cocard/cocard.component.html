@@ -1,0 +1,90 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-img">
+      <img
+        src="{{ card.image ? card.image : '' }}"
+        alt="{{ card.courseDetails.name }}"
+      />
+    </div>
+    <div class="card-detail">
+      <div class="card-title">
+        <div class="card-name">
+          {{ card.courseDetails.name ? card.courseDetails.name : "" }}
+        </div>
+        <div class="favicon">
+          <img
+            src="../../../assets/quantum screen assets/icons/favourite.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="card-subtitle">
+        <span *ngIf="card.subject.name">{{ card.subject.name }}</span>
+        <span *ngIf="card.subject.grade">
+          | Grade {{ card.subject.grade }}</span
+        >
+      </div>
+      <div class="card-subsubtitle">
+        <strong>{{
+          card.courseDetails.units ? card.courseDetails.units : "0"
+        }}</strong>
+        units
+        <strong>{{
+          card.courseDetails.lessons ? card.courseDetails.lessons : "0"
+        }}</strong>
+        Lessons
+        <strong>{{
+          card.courseDetails.topics ? card.courseDetails.topics : "0"
+        }}</strong>
+        Topics
+      </div>
+      <div class="card-select">
+        <select name="" id="">
+          <option *ngFor="let card of card.classes" value="Teachers-name">
+            {{ card }}
+          </option>
+        </select>
+      </div>
+      <div class="card-classd">
+        <p>
+          <span *ngIf="card.courseDetails.students"
+            >{{ card.courseDetails.students }} students
+          </span>
+          <span *ngIf="card.courseDetails.startdate"
+            ><span *ngIf="card.courseDetails.students">|</span>
+            {{ card.courseDetails.startdate }} -</span
+          >
+          <span *ngIf="card.courseDetails.enddate">{{
+            card.courseDetails.enddate
+          }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-icon">
+      <img
+        src="../../../assets/quantum screen assets/icons/preview.svg"
+        alt=""
+      />
+    </div>
+    <div class="footer-icon">
+      <img
+        src="../../../assets/quantum screen assets/icons/manage course.svg"
+        alt=""
+      />
+    </div>
+    <div class="footer-icon">
+      <img
+        src="../../../assets/quantum screen assets/icons/grade submissions.svg"
+        alt=""
+      />
+    </div>
+    <div class="footer-icon">
+      <img
+        src="../../../assets/quantum screen assets/icons/reports.svg"
+        alt=""
+      />
+    </div>
+  </div>
+</div>
