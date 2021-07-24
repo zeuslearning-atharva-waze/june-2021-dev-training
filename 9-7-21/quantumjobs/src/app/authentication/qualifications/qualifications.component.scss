@@ -1,0 +1,308 @@
+.accordion {
+  box-sizing: border-box;
+  -webkit-box-sizing: padding-box;
+
+  .accordion-expand {
+    margin-top: 24px;
+
+    height: 56px;
+    background: #dbefff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 6px #00000029;
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .acc-brand {
+      margin-left: 16px;
+    }
+    .acc-arrow-up {
+      width: 32px;
+      img {
+        filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+          brightness(97%) contrast(89%);
+      }
+    }
+  }
+  .aligner {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .svgs {
+    filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+      brightness(97%) contrast(89%);
+    position: relative;
+    top: 7px;
+  }
+  label {
+    display: block;
+    color: #666666;
+    font-size: 12px;
+  }
+
+  .read {
+    border: none;
+  }
+
+  .write {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #b5c5d4;
+  }
+  .checkbox_wrapper {
+    display: inline-flex;
+    position: relative;
+    height: 21px;
+    width: 25px;
+  }
+  .radio_wrapper {
+    display: inline-flex;
+    position: relative;
+    height: 21px;
+    width: 25px;
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+    height: 16px;
+    width: 17px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  input[type="checkbox"] + label {
+    background: url("../../../assets/icons/check_box_outline_blank_black_24dp.svg")
+      no-repeat;
+    height: 21px;
+    width: 25px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+      brightness(97%) contrast(89%);
+    position: relative;
+    bottom: 2px;
+  }
+
+  input[type="checkbox"]:checked + label {
+    background: url("../../../assets/icons/check_box_black_24dp.svg") no-repeat;
+    height: 21px;
+    width: 25px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+      brightness(97%) contrast(89%);
+    position: relative;
+    bottom: 2px;
+  }
+  input[type="radio"] {
+    opacity: 0;
+    height: 16px;
+    width: 17px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  input[type="radio"] + label {
+    background: url("../../../assets/icons/radio_button_unchecked_black_24dp.svg")
+      no-repeat;
+    height: 21px;
+    width: 25px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+      brightness(97%) contrast(89%);
+    position: relative;
+    bottom: 2px;
+  }
+
+  input[type="radio"]:checked + label {
+    background: url("../../../assets/icons/radio_button_checked_black_24dp.svg")
+      no-repeat;
+    height: 21px;
+    width: 25px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+      brightness(97%) contrast(89%);
+    position: relative;
+    bottom: 2px;
+  }
+  .accordion-content-mini {
+    height: 100px;
+
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+
+    .form-group-a {
+      padding-top: 24px;
+
+      .radios {
+        padding-top: 8px;
+        display: flex;
+        width: 229px;
+        justify-content: space-between;
+      }
+    }
+  }
+  .accordion-content-main {
+    margin-top: 8px;
+    height: 513px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+    .others {
+      padding-top: 16px;
+      height: 51px;
+      width: 452px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .technology {
+      padding-top: 24px;
+
+      .tech {
+        margin-top: 18px;
+        font-size: 16px;
+      }
+    }
+    .past-applications {
+      margin-top: 40px;
+    }
+    .radios {
+      display: flex;
+      width: 120px;
+      padding-top: 10px;
+      justify-content: space-between;
+    }
+  }
+
+  .accordion-content {
+    height: 463px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+
+    .form-group-a {
+      padding-top: 40px;
+
+      height: 51px;
+      width: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .radios {
+        display: flex;
+        width: 229px;
+        justify-content: space-between;
+      }
+    }
+    .first {
+      padding-top: 24px;
+    }
+    .form-group {
+      margin-top: 24px;
+      display: grid;
+      grid-template-rows: 51px 51px;
+      grid-template-columns: 452px 452px;
+      column-gap: 24px;
+      row-gap: 40px;
+      .form-group-b {
+        display: flex;
+        height: 51px;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .accordion-content-ex {
+    height: 1275px;
+    margin-top: 8px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+    .form-group {
+      padding-top: 40px;
+
+      height: 51px;
+      width: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .radios {
+        display: flex;
+        width: 229px;
+        justify-content: space-between;
+      }
+    }
+    .first {
+      padding-top: 24px;
+    }
+    .others {
+      padding-top: 16px;
+      height: 51px;
+      width: 452px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .technology {
+      padding-top: 40px;
+
+      .tech {
+        margin-top: 18px;
+        font-size: 16px;
+      }
+    }
+    .past-applications {
+      margin-top: 40px;
+    }
+    .radios {
+      padding-top: 10px;
+      display: flex;
+      width: 120px;
+      justify-content: space-between;
+    }
+
+    .notice {
+      display: grid;
+      grid-template-rows: 55px;
+      grid-template-columns: auto auto;
+      column-gap: 24px;
+    }
+  }
+}
+
+.display-none {
+  display: none;
+}

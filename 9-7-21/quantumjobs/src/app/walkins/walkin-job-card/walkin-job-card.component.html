@@ -1,0 +1,44 @@
+<div *ngFor="let job of walkinrolemap">
+  <div class="job-acc" (click)="toggler()">
+    <div class="acc-brand">{{ job.title }}</div>
+    <div class="acc-arrow-down">
+      <img
+        *ngIf="jobtoggle"
+        src="../../../assets/icons/expand_less_black_24dp.svg"
+        alt=""
+      />
+      <img
+        *ngIf="!jobtoggle"
+        src="../../../assets/icons/expand_more_black_24dp.svg"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="job-acc-expand" *ngIf="jobtoggle">
+    <div class="compensation">
+      <div class="card-label">Gross Compensation Package :</div>
+      <div class="card-expand-content">Rs. {{ job.compensation }} lpa</div>
+    </div>
+    <div class="role">
+      <div class="card-label">Role Description :</div>
+      <div class="card-expand-content" [innerHTML]="job.description"></div>
+    </div>
+    <div class="requirements">
+      <div class="card-label">Requirements :</div>
+      <div class="card-expand-content" [innerHTML]="job.requirements"></div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="job-acc">
+  <div class="acc-brand">Software Engineer</div>
+  <div class="acc-arrow-down">
+    <img src="../../../assets/icons/expand_more_black_24dp.svg" alt="" />
+  </div>
+</div>
+<div class="job-acc">
+  <div class="acc-brand">Software Quality Engineer</div>
+  <div class="acc-arrow-down">
+    <img src="../../../assets/icons/expand_more_black_24dp.svg" alt="" />
+  </div>
+</div> -->

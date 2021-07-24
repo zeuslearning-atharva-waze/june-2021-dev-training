@@ -1,0 +1,10 @@
+<!-- <div *ngFor="let todo of todos; index as i">
+  <app-todo-item [todo]="todo" [i]="i" (todoDelete)="deleteTodo($event)" (todoCheckbox)="toggleTodo($event)">
+  </app-todo-item>
+</div> -->
+
+<div class="aligner">
+  <div *ngFor="let walkin of walkins; index as i">
+    <app-walkin-card [walkin]="walkin" [i]="i"></app-walkin-card>
+  </div>
+</div>

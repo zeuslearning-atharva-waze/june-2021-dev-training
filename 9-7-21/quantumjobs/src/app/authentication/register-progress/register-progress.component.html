@@ -1,0 +1,22 @@
+<div class="progress-bar">
+  <div class="progress-section">
+    <div [ngClass]="data === 1 ? 'gcircle' : 'bcircle'">
+      <span [ngClass]="data === 1 ? 'gnum' : 'bnum'">1</span>
+    </div>
+    <div class="p-text">Personal Information</div>
+  </div>
+  <div class="psection-divider"></div>
+  <div class="progress-section">
+    <div [ngClass]="data === 2 ? 'gcircle' : 'bcircle'">
+      <span [ngClass]="data === 2 ? 'gnum' : 'bnum'">2</span>
+    </div>
+    <div class="p-text">Qualifications</div>
+  </div>
+  <div class="psection-divider"></div>
+  <div class="progress-section">
+    <div [ngClass]="data === 3 ? 'gcircle' : 'bcircle'">
+      <span [ngClass]="data === 3 ? 'gnum' : 'bnum'">3</span>
+    </div>
+    <div class="p-text">Review and Proceed</div>
+  </div>
+</div>

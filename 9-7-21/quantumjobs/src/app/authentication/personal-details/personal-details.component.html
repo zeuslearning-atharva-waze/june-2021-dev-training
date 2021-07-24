@@ -1,0 +1,173 @@
+<div [formGroup]="form">
+  <div class="personal-info" formGroupName="userDetails">
+    <div class="personal-form">
+      <div class="inputs finput">
+        <label for="fname">First Name</label>
+        <input
+          type="text"
+          name="fname"
+          formControlName="fname"
+          [readonly]="isreadOnly"
+          [ngClass]="isreadOnly ? 'read' : 'write'"
+        />
+      </div>
+      <div class="inputs">
+        <label for="lname">Last Name</label>
+        <input
+          type="text"
+          name="lname"
+          formControlName="lname"
+          [readonly]="isreadOnly"
+          [ngClass]="isreadOnly ? 'read' : 'write'"
+        />
+      </div>
+      <div class="inputs">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          formControlName="email"
+          [readonly]="isreadOnly"
+          [ngClass]="isreadOnly ? 'read' : 'write'"
+        />
+      </div>
+      <div class="inputs">
+        <label for="password">Create Password</label>
+        <input
+          type="password"
+          name="password"
+          formControlName="password"
+          [readonly]="isreadOnly"
+          [ngClass]="isreadOnly ? 'read' : 'write'"
+        />
+      </div>
+      <div class="inputs">
+        <label for="mobile">Phone Number</label>
+        <div class="mobile-no">
+          +
+          <div class="area-code">
+            <input
+              type="number"
+              name="mobile"
+              class="area-code"
+              formControlName="mobileCountryCode"
+              [readonly]="isreadOnly"
+              [ngClass]="isreadOnly ? 'read' : 'write'"
+            />
+          </div>
+          <div class="mobile">
+            <input
+              type="number"
+              class="mobile"
+              formControlName="mobileNumber"
+              [readonly]="isreadOnly"
+              [ngClass]="isreadOnly ? 'read' : 'write'"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="resume">
+        <label for="resume-upload" class="custom-file-upload">
+          <img
+            src="../../../assets/icons/Upload_black_24dp.svg"
+            class="svgs"
+            alt=""
+          />UPLOAD UPDATED RESUME
+        </label>
+        <input id="resume-upload" type="file" formControlName="resumeLink" />
+      </div>
+      <div class="inputs portfolio">
+        <label for="">Enter Portfolio URL (if any)</label>
+        <input
+          type="text"
+          formControlName="portfolioUrl"
+          [readonly]="isreadOnly"
+          [ngClass]="isreadOnly ? 'read' : 'write'"
+        />
+      </div>
+
+      <div class="job-roles" formGroupName="formKeys">
+        <label>Preferred Job Roles</label>
+        <div class="role" *ngFor="let data of jobPreferenceData; let i = index">
+          <div class="checkbox_wrapper">
+            <input
+              type="checkbox"
+              [value]="data.value"
+              (change)="onCheckboxChange($event)"
+              [readonly]="isreadOnly"
+              [ngClass]="isreadOnly ? 'read' : 'write'"
+              formControlName="{{ data.key }}"
+            />
+            <label></label>
+          </div>
+          {{ data.name }}
+        </div>
+        <!-- <div class="role">
+        <div class="checkbox_wrapper">
+          <input
+            type="checkbox"
+            value="Software Engineer"
+            (change)="onCheckboxChange($event)"
+          />
+          <label></label>
+        </div>
+        Software Engineer
+      </div>
+      <div class="role">
+        <div class="checkbox_wrapper">
+          <input
+            type="checkbox"
+            value="Software Quality Engineer"
+            (change)="onCheckboxChange($event)"
+          />
+          <label></label>
+        </div>
+        Software Quality Engineer
+      </div> -->
+      </div>
+
+      <div class="inputs referral">
+        <label>
+          If You Are Registering Via A Referral, Please Mention Full Name Of The
+          Employee Who Referred You
+        </label>
+        <input
+          type="text"
+          formControlName="referral"
+          [readonly]="isreadOnly"
+          [ngClass]="isreadOnly ? 'read' : 'write'"
+        />
+      </div>
+      <div class="job-updates">
+        <div class="checkbox_wrapper">
+          <input
+            type="checkbox"
+            formControlName="jobUpdatesViaEmail"
+            [readonly]="isreadOnly"
+            [ngClass]="isreadOnly ? 'read' : 'write'"
+          />
+          <label></label>
+        </div>
+        <div>Send me job related updates via mail</div>
+      </div>
+    </div>
+    <div class="personal-photo">
+      <div class="pic">
+        <img
+          [src]="imageShow"
+          alt=""
+          width="200"
+          height="200"
+          style="border-radius: 50%; padding-top: 10px; padding-right: 10px"
+        />
+      </div>
+      <div class="upload">
+        <label for="pic-upload" class="custom-file-upload">
+          UPLOAD DISPLAY PICTURE
+        </label>
+        <input id="pic-upload" type="file" (change)="onFileChanged($event)" />
+        <label>Max image size 5 MB</label>
+      </div>
+    </div>
+  </div>
+</div>

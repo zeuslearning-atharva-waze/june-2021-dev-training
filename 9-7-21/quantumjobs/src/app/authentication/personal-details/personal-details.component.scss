@@ -1,0 +1,191 @@
+.personal-info {
+  height: fit-content;
+  padding-bottom: 24px;
+  display: flex;
+  flex: 0.25;
+  justify-content: space-between;
+  margin-top: 24px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1;
+
+  label {
+    display: block;
+    color: #666666;
+    font-size: 12px;
+  }
+
+  .read {
+    border: none;
+  }
+
+  .write {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #b5c5d4;
+  }
+
+  .inputs {
+    height: 51px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: 24px;
+    width: 480px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .mobile-no {
+    width: 150px;
+    display: flex;
+
+    .area-code {
+      width: 20px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      margin-left: 5px;
+    }
+
+    .mobile {
+      width: 80px;
+      margin-left: 10px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+  }
+
+  .checkbox_wrapper {
+    display: inline-flex;
+    position: relative;
+    height: 21px;
+    width: 25px;
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+    height: 16px;
+    width: 17px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  input[type="checkbox"] + label {
+    background: url("../../../assets/icons/check_box_outline_blank_black_24dp.svg")
+      no-repeat;
+    height: 21px;
+    width: 25px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+      brightness(97%) contrast(89%);
+    position: relative;
+    bottom: 2px;
+  }
+
+  input[type="checkbox"]:checked + label {
+    background: url("../../../assets/icons/check_box_black_24dp.svg") no-repeat;
+    height: 21px;
+    width: 25px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+      brightness(97%) contrast(89%);
+    position: relative;
+    bottom: 2px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+  .custom-file-upload {
+    display: inline-block;
+    color: #1f7a54;
+    cursor: pointer;
+    border: none;
+  }
+
+  .finput {
+    margin-top: 24px;
+  }
+
+  .resume {
+    margin-top: 41px;
+    margin-left: 16px;
+  }
+
+  .job-roles {
+    margin-top: 40px;
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 14px;
+      color: black;
+    }
+    input {
+      margin-right: 9px;
+    }
+
+    .role {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  }
+
+  .referral {
+    height: 67px;
+  }
+  .job-updates {
+    margin-left: 16px;
+    display: flex;
+    margin-top: 43px;
+    font-size: 14px;
+
+    div {
+      padding-top: 2px;
+      margin-left: 8px;
+    }
+  }
+
+  .svgs {
+    filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+      brightness(97%) contrast(89%);
+    position: relative;
+    top: 5px;
+  }
+
+  .personal-photo {
+    .upload {
+      color: #1f7a54;
+      font-size: 12px;
+      margin-right: 24px;
+      text-align: center;
+    }
+  }
+}
+
+button {
+  background: #3fd28b 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 5px #0000003d;
+  border-radius: 2px;
+  opacity: 1;
+  margin-top: 32px;
+  width: 90px;
+  height: 28px;
+  margin-left: 45%;
+  margin-bottom: 29px;
+  border: none;
+}

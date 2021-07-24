@@ -1,0 +1,36 @@
+<div class="create-account">
+  <div class="ca-back">
+    <i class="fa fa-arrow-left" style="font-size: 24px; color: #3fd28b"></i>
+  </div>
+  <div class="ca-text">Create An Account</div>
+  <div class="ca-buttons">
+    <button>CANCEL</button>
+    <button>CREATE</button>
+  </div>
+</div>
+<div class="aligner" [formGroup]="personalDetailsForm">
+  <app-register-progress
+    [data]="step"
+    formGroupName="userDetails"
+  ></app-register-progress>
+  <app-personal-details *ngIf="step === 1"></app-personal-details>
+  <app-qualifications
+    *ngIf="step === 2"
+    [formGroup]="personalDetailsForm"
+    formGroupName="qualifications"
+  ></app-qualifications>
+  <app-review *ngIf="step === 3"></app-review>
+</div>
+<div class="buttons">
+  <div class="center">
+    <button class="button-prev" *ngIf="step !== 1" (click)="submit('prev')">
+      Previous
+    </button>
+    <button class="button-next" *ngIf="step !== 3" (click)="submit('next')">
+      Next
+    </button>
+  </div>
+</div>
+<pre>
+  {{ personalDetailsForm.value | json }}
+</pre>

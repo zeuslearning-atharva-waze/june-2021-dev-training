@@ -1,0 +1,56 @@
+<div id="log" class="login">
+  <div class="login-header">Log in</div>
+  <div class="login-body">
+    <div class="form">
+      <form action="#" [formGroup]="loginForm">
+        <div class="inputs" formGroupName="userLogin">
+          <div>
+            <input
+              class="userip"
+              type="text"
+              name="userd"
+              placeholder="Email ID"
+              formControlName="email"
+              required
+            />
+          </div>
+          <span class="forgot">FORGOT EMAIL?</span>
+          <div class="passwordip">
+            <input
+              class="userip"
+              type="password"
+              name=""
+              placeholder="Password"
+              formControlName="password"
+              required
+            />
+            <div class="show-password">
+              <img src="../../../assets/icons/View Password.svg" alt="" />
+            </div>
+          </div>
+          <span class="forgot">FORGOT PASSWORD?</span>
+        </div>
+        <div class="submit">
+          <div>
+            <input type="checkbox" id="remember" name="remember" />
+            <label for="remember">Remember Me</label>
+          </div>
+
+          <button type="submit" class="button" (click)="loginUser()">
+            LOG IN
+          </button>
+        </div>
+        <div>
+          <div class="register">Not registered yet?</div>
+          <div class="account" [routerLink]="['/register']">
+            CREATE AN ACCOUNT
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="about"><p>About | Contact Us</p></div>
+<pre
+  >{{ loginForm.value | json }}
+</pre>

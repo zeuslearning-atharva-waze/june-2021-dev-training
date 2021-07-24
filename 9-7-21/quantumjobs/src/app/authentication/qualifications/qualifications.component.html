@@ -1,0 +1,366 @@
+<div [formGroup]="form">
+  <div class="form" formGroupName="qualifications">
+    <div class="accordion">
+      <div class="accordion-expand">
+        <div class="acc-brand">Educational Qualifications</div>
+        <div class="acc-arrow-up">
+          <img src="../../../assets/icons/expand_less_black_24dp.svg" alt="" />
+        </div>
+      </div>
+      <div class="accordion-content">
+        <div class="aligner">
+          <div class="form-group-a first">
+            <label for="percent">Aggregate Percentage*</label>
+            <input
+              type="number"
+              name="percent"
+              formControlName="aggPercent"
+              [readonly]="isreadOnly"
+              [ngClass]="isreadOnly ? 'read' : 'write'"
+            />
+          </div>
+          <div class="form-group-a">
+            <label for="year">Year of Passing*</label>
+            <input
+              type="year"
+              name="year"
+              formControlName="yearOfPassing"
+              [readonly]="isreadOnly"
+              [ngClass]="isreadOnly ? 'read' : 'write'"
+            />
+          </div>
+          <div class="form-group">
+            <div class="form-group-b">
+              <label for="qual">Qualification*</label>
+              <select
+                name="qual"
+                id=""
+                [disabled]="isreadOnly"
+                [ngClass]="isreadOnly ? 'read' : 'write'"
+                formControlName="qualification"
+              >
+                <option value="BTech">Bachelor in Technology (B.Tech)</option>
+              </select>
+            </div>
+            <div class="form-group-b">
+              <label for="stream">Stream*</label>
+              <select
+                name="stream"
+                id=""
+                formControlName="stream"
+                [disabled]="isreadOnly"
+                [ngClass]="isreadOnly ? 'read' : 'write'"
+              >
+                <option value="IT">Information Technology</option>
+              </select>
+            </div>
+            <div class="form-group-b">
+              <label for="college">College*</label>
+              <select
+                name="college"
+                id=""
+                formControlName="college"
+                [disabled]="isreadOnly"
+                [ngClass]="isreadOnly ? 'read' : 'write'"
+              >
+                <option value="PIT">Pune Institute of Technology (PIT)</option>
+              </select>
+            </div>
+            <div class="form-group-b">
+              <label for="others"
+                >If others, please enter your college name</label
+              >
+              <input
+                type="text"
+                name="others"
+                formControlName="otherCollege"
+                [readonly]="isreadOnly"
+                [ngClass]="isreadOnly ? 'read' : 'write'"
+              />
+            </div>
+          </div>
+          <div class="form-group-a">
+            <label for="location">Where is your college located?*</label>
+            <select
+              name="location"
+              id=""
+              formControlName="collegeLocation"
+              [disabled]="isreadOnly"
+              [ngClass]="isreadOnly ? 'read' : 'write'"
+            >
+              <option value="Pune">Pune</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-expand">
+        <div class="acc-brand">Professional Qualifications</div>
+        <div class="acc-arrow-up">
+          <img src="../../../assets/icons/expand_less_black_24dp.svg" alt="" />
+        </div>
+      </div>
+      <div class="accordion-content-mini">
+        <div class="aligner">
+          <div class="form-group-a first">
+            <label for="applied">Applicant Type*</label>
+            <div class="radios" name="applied">
+              <div>
+                <div class="radio_wrapper">
+                  <input
+                    type="radio"
+                    checked
+                    name="frm"
+                    (change)="ProSectionToggler()"
+                    [disabled]="isreadOnly"
+                  />
+                  <label></label>
+                </div>
+                Fresher
+              </div>
+              <div>
+                <div class="checkbox_wrapper">
+                  <input
+                    type="radio"
+                    name="frm"
+                    (change)="ProSectionToggler()"
+                    [disabled]="isreadOnly"
+                  />
+                  <label></label>
+                </div>
+                Experienced
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="accordion-content-main"
+        *ngIf="fresher"
+        formGroupName="fresher"
+      >
+        <div class="aligner">
+          <div class="technology">
+            <label>Select All The Technologies You Are Familiar In</label>
+            <div class="tech" *ngFor="let data of skillsData; let i = index">
+              <div
+                class="checkbox_wrapper"
+                formArrayName="array"
+                *ngFor="let skill of array.controls; let i = index"
+              >
+                <input
+                  type="checkbox"
+                  [value]="data.value"
+                  (change)="onCheckboxChange($event, 'fresher')"
+                  [readonly]="isreadOnly"
+                  formControlName="skill"
+                />
+                <label></label>
+              </div>
+              {{ data.name }}
+            </div>
+            <div class="others">
+              <label>If others, please mention</label>
+              <input
+                type="text"
+                formControlName="otherFresherTech"
+                [readonly]="isreadOnly"
+                [ngClass]="isreadOnly ? 'read' : 'write'"
+              />
+            </div>
+          </div>
+          <div class="past-applications">
+            <label
+              >Have You Appeared For Any Test By Zeus in the past 12
+              months?*</label
+            >
+            <div class="radios">
+              <div>
+                <div class="radio_wrapper">
+                  <input type="radio" name="prevApplication" />
+                  <label></label>
+                </div>
+                Yes
+              </div>
+              <div>
+                <div class="checkbox_wrapper">
+                  <input type="radio" name="prevApplication" checked />
+                  <label></label>
+                </div>
+                No
+              </div>
+            </div>
+            <div class="others">
+              <label>If Yes, which role did you apply for?</label>
+              <input
+                type="text"
+                formControlName="prevApplicationRolefr"
+                [readonly]="isreadOnly"
+                [ngClass]="isreadOnly ? 'read' : 'write'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" *ngIf="!fresher" formGroupName="experienced">
+      <div class="accordion-content-ex">
+        <div class="aligner">
+          <div class="form-group first">
+            <label>Years of Experience*</label>
+            <input
+              type="number"
+              formControlName="yearsExp"
+              [readonly]="isreadOnly"
+              [ngClass]="isreadOnly ? 'read' : 'write'"
+            />
+          </div>
+          <div class="form-group">
+            <label>Current CTC* (In Rupees)</label>
+            <input
+              type="number"
+              formControlName="currentCTC"
+              [readonly]="isreadOnly"
+              [ngClass]="isreadOnly ? 'read' : 'write'"
+            />
+          </div>
+          <div class="form-group">
+            <label>Expected CTC* (In Rupees)</label>
+            <input
+              type="number"
+              formControlName="expectedCTC"
+              [readonly]="isreadOnly"
+              [ngClass]="isreadOnly ? 'read' : 'write'"
+            />
+          </div>
+
+          <div class="technology">
+            <label>Select All The Technologies You Have Expertise In</label>
+            <div class="tech" *ngFor="let data of skillsData; let i = index">
+              <div class="checkbox_wrapper">
+                <input
+                  type="checkbox"
+                  [value]="data.value"
+                  (change)="onCheckboxChange($event, 'proExp')"
+                  [readonly]="isreadOnly"
+                />
+                <label></label>
+              </div>
+              {{ data.name }}
+            </div>
+
+            <div class="others">
+              <label>If others, please mention</label>
+              <input
+                type="text"
+                formControlName="otherFamiliarTech"
+                [readonly]="isreadOnly"
+                [ngClass]="isreadOnly ? 'read' : 'write'"
+              />
+            </div>
+          </div>
+          <div class="technology">
+            <label>Select All The Technologies You Are Familiar In</label>
+            <div class="tech" *ngFor="let data of skillsData; let i = index">
+              <div class="checkbox_wrapper">
+                <input
+                  type="checkbox"
+                  [value]="data.value"
+                  (change)="onCheckboxChange($event, 'proFam')"
+                  [readonly]="isreadOnly"
+                />
+                <label></label>
+              </div>
+              {{ data.name }}
+            </div>
+            <div class="others">
+              <label>If others, please mention</label>
+              <input
+                type="text"
+                formControlName="otherExpTech"
+                [readonly]="isreadOnly"
+                [ngClass]="isreadOnly ? 'read' : 'write'"
+              />
+            </div>
+          </div>
+          <div class="past-applications">
+            <label>Are you currently on notice period?*</label>
+            <div class="radios">
+              <div>
+                <div class="radio_wrapper">
+                  <input type="radio" name="notice" />
+                  <label></label>
+                </div>
+                Yes
+              </div>
+              <div>
+                <div class="checkbox_wrapper">
+                  <input type="radio" name="notice" checked />
+                  <label></label>
+                </div>
+                No
+              </div>
+            </div>
+            <div class="notice">
+              <div class="others">
+                <label>If Yes, when will your notice period end?*</label>
+                <input
+                  type="date"
+                  formControlName="noticePeriodEndDate"
+                  [readonly]="isreadOnly"
+                />
+              </div>
+              <div class="others">
+                <label for=""
+                  >How long is your notice period?* (Mention in months)</label
+                >
+                <select
+                  name=""
+                  id=""
+                  formControlName="noticePeriodInterval"
+                  [disabled]="isreadOnly"
+                >
+                  <option value="2 months">2 months</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="past-applications">
+            <label
+              >Have You Appeared For Any Test By Zeus in the past 12
+              months?*</label
+            >
+            <div class="radios">
+              <div>
+                <div class="radio_wrapper">
+                  <input type="radio" name="pa" />
+                  <label></label>
+                </div>
+                Yes
+              </div>
+              <div>
+                <div class="checkbox_wrapper">
+                  <input type="radio" name="pa" checked />
+                  <label></label>
+                </div>
+                No
+              </div>
+            </div>
+            <div class="others">
+              <label>If Yes, which role did you apply for?</label>
+              <input
+                type="text"
+                formControlName="prevApplicationRoleEx"
+                [readonly]="isreadOnly"
+                [ngClass]="isreadOnly ? 'read' : 'write'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

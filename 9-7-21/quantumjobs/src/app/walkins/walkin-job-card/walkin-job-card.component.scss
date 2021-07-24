@@ -1,0 +1,47 @@
+.job-acc {
+  margin-top: 24px;
+  cursor: pointer;
+  background: #dbefff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 4px 6px #00000029;
+  height: 56px;
+
+  opacity: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .acc-brand {
+    margin-left: 16px;
+  }
+  .acc-arrow-down {
+    width: 32px;
+    img {
+      filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+        brightness(97%) contrast(89%);
+    }
+  }
+}
+
+.job-acc-expand {
+  height: fit-content;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 4px 6px #0000003d;
+  opacity: 1;
+
+  .card-label {
+    color: #666666;
+    opacity: 1;
+    padding-left: 16px;
+    padding-top: 16px;
+    font-size: 12px;
+  }
+
+  .card-expand-content {
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #eeeeee;
+  }
+}

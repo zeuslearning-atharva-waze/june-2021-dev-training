@@ -1,0 +1,47 @@
+<div class="aligner">
+  <div class="ht-card">
+    <div class="tick">
+      <img
+        class="check"
+        src="../../../assets/icons/Success - Check .svg"
+        alt=""
+      />
+    </div>
+    <div class="ht-card-title">
+      Congratulations ! You have successfully applied for the walk-in
+      opportunity
+    </div>
+    <div class="datetime">
+      <div class="card-label">Date & Time of Walk-In :</div>
+      <div class="card-expand-content">
+        <div class="slot-date">{{ datetime.date | date: "dd-MMM-yyyy" }}</div>
+        <div class="slot-time">
+          {{ datetime.starttime }} to {{ datetime.endtime }}
+        </div>
+      </div>
+    </div>
+    <div class="venue">
+      <div class="card-label">Venue of Walk-In :</div>
+      <div class="card-expand-content">
+        {{ venue.address_line_1 }}
+        <br />
+        {{ venue.address_line_2 }}
+
+        <br />
+        {{ venue.city }} - {{ venue.pincode }}
+        <br />
+        Phone: +{{ venue.phone_number }}
+      </div>
+    </div>
+    <div class="tor">
+      <div class="card-label">THINGS TO REMEMBER :</div>
+      <div
+        class="card-expand-content"
+        [innerHTML]="tor.things_to_remember"
+      ></div>
+    </div>
+    <div class="card-footer">
+      <button>DOWNLOAD HALL TICKET</button>
+    </div>
+  </div>
+</div>

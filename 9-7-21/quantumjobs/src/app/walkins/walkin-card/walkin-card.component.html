@@ -1,0 +1,50 @@
+<div class="card-container" id="cc">
+  <span *ngIf="expired === 'expired'" class="expired">Expired</span>
+  <span *ngIf="expired !== 'expired' && expired < 5" class="expired"
+    >Expires in {{ expired }} days</span
+  >
+  <div class="card-title">{{ walkin.title }}</div>
+  <div class="card-details">
+    <div class="card-daytime">
+      <div class="card-label">Date & Time :</div>
+      <div class="datetime">
+        {{ walkin.startdate | date: "dd-MMM-yyyy" }} to
+        {{ walkin.enddate | date: "dd-MMM-yyyy" }}
+      </div>
+    </div>
+
+    <div class="card-location">
+      <div class="location-icon">
+        <img src="../../../assets/icons/Location icon.svg" alt="" />
+      </div>
+      <div class="location">{{ walkin.location }}</div>
+    </div>
+  </div>
+  <div class="card-label">Job Roles :</div>
+  <div class="card-jobs">
+    <div class="job-role" *ngFor="let job of walkin.jobroles">
+      <div class="job-icon">
+        <img src="../../../assets/icons/{{ job }}.svg" alt="" />
+      </div>
+      <div class="job-title">{{ job }}</div>
+    </div>
+    <!-- <div class="job-role">
+      <div class="job-icon">
+        <img src="../../../assets/icons/Software Engineer.svg" alt="" />
+      </div>
+      <div class="job-title">Software Engineer</div>
+    </div>
+    <div class="job-role">
+      <div class="job-icon">
+        <img src="../../../assets/icons/Software Quality Engineer.svg" alt="" />
+      </div>
+      <div class="job-title">Software Quality Engineer</div>
+    </div> -->
+  </div>
+  <div *ngIf="walkin.internship" class="card-internship">
+    Internship Opportunity for {{ walkin.internship }} Students
+  </div>
+  <div class="card-footer">
+    <button (click)="getRouterLink(walkin.GUID)">VIEW MORE DETAILS</button>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+@media (min-width: 0px) and (max-width: 375px) {
+  #log {
+    position: absolute;
+    top: 77px;
+    margin-left: 16px;
+    width: 343px;
+    height: 419px;
+    .userip {
+      width: 280px;
+    }
+  }
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  #log {
+    margin-left: 140px;
+    margin-top: 245px;
+  }
+}
+@media (min-width: 800px) and (max-width: 1024px) {
+  #log {
+    margin-top: 143px;
+    margin-left: 270px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 2560px) {
+  #log {
+    margin-top: 143px;
+    margin-left: 515px;
+  }
+}
+
+.login {
+  margin-top: 30px;
+  width: 488px;
+  height: 419px;
+
+  background-color: #ffffff;
+  border-top: 5px solid #3ac7ec;
+  border-radius: 2px 2px 0px 0px;
+
+  .login-header {
+    text-align: center;
+
+    margin-top: 16px;
+    font-size: 24px;
+    color: #222222;
+  }
+
+  .form {
+    margin: 25px 25px;
+  }
+
+  .selectors {
+    height: 126px;
+    font: inherit;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  select {
+    width: 396px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font: inherit;
+    font-family: "Quicksand";
+  }
+
+  .selector-label {
+    font-size: 12px;
+    color: #666666;
+  }
+
+  .inputs {
+    margin-top: 32px;
+
+    height: 129px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .userip {
+    width: 430px;
+    font: inherit;
+    font-family: "Quicksand";
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .passwordip {
+    margin-top: 33px;
+    display: flex;
+    justify-content: space-between;
+    .show-password {
+      border-bottom: 1px solid #eeeeee;
+    }
+  }
+
+  .forgot {
+    margin-left: auto;
+    color: #1f7a54;
+    font-size: 14px;
+  }
+
+  .submit {
+    margin-top: 26px;
+    height: 94px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .button {
+    align-self: center;
+    background-color: #3fd28b;
+    height: 40px;
+    width: 200px;
+    border: none;
+
+    box-shadow: 0px 3px 5px #0000003d;
+  }
+
+  .register {
+    padding-top: 24px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .account {
+    padding-top: 4px;
+    text-align: center;
+    color: #1f7a54;
+    cursor: pointer;
+  }
+}
+
+.about {
+  margin-top: 90px;
+  text-align: center;
+  color: #1f7a54;
+}

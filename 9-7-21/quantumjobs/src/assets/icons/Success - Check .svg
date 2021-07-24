@@ -1,0 +1,15 @@
+<svg id="check_black_24dp" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Path_3678" data-name="Path 3678" class="cls-1" d="M0,0H60V60H0Z"/>
+  <path id="Path_3679" data-name="Path 3679" class="cls-2" d="M20.441,44.573,7.736,29.208,3.41,34.4,20.441,55,57,10.785l-4.3-5.2Z"/>
+</svg>

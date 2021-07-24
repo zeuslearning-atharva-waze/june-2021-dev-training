@@ -1,0 +1,58 @@
+<div class="walkin-ip">
+  <div class="ip-header">Time Slots & Preferences</div>
+  <div class="walkin-label">Select a Time Slot :</div>
+  <div class="time">
+    <div class="ip" *ngFor="let s of slots">
+      <div class="radio_wrapper">
+        <input
+          type="radio"
+          name="notice"
+          value="{{ s.walkin_slot_id }}"
+          [(ngModel)]="radio"
+          name="radio"
+        />
+        <label></label>
+      </div>
+      <span>{{ s.starttime }} to {{ s.endtime }}</span>
+    </div>
+    <!-- <div class="ip">
+      <input type="radio" />
+      <span>1:00 PM to 11:00 PM</span>
+    </div> -->
+  </div>
+  <div class="walkin-label">Select Your Preference :</div>
+  <div class="preferences">
+    <div class="ip" *ngFor="let job of walkinrolemap">
+      <div class="checkbox_wrapper">
+        <input
+          type="checkbox"
+          value="{{ job.jobs_in_walkin_id }}"
+          (change)="onCheckboxChange($event)"
+          name="{{ job.title }}"
+        />
+        <label></label>
+      </div>
+      <span>{{ job.title }}</span>
+      <!-- <div class="ip">
+      <input type="checkbox" />
+      <span>Software Engineer</span>
+    </div>
+    <div class="ip">
+      <input type="checkbox" />
+      <span>Software Quality Engineer</span>
+    </div> -->
+    </div>
+    <div class="resume">
+      <div class="ip">
+        <label for="file-upload" class="custom-file-upload">
+          <img
+            src="../../../assets/icons/Upload_black_24dp.svg"
+            class="svgs"
+            alt=""
+          />UPLOAD UPDATED RESUME
+        </label>
+        <input id="file-upload" type="file" (change)="apply($event)" />
+      </div>
+    </div>
+  </div>
+</div>

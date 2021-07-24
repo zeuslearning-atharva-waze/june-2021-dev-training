@@ -1,0 +1,15 @@
+<svg id="arrow_upward_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #1f2834;
+      }
+    </style>
+  </defs>
+  <path id="Path_3680" data-name="Path 3680" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_3681" data-name="Path 3681" class="cls-2" d="M4,12l1.41,1.41L11,7.83V20h2V7.83l5.58,5.59L20,12,12,4Z"/>
+</svg>

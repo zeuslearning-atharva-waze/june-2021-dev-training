@@ -1,0 +1,139 @@
+.card-container {
+  margin-bottom: 24px;
+  height: fit-content;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 4px 6px #0000003d;
+  opacity: 1;
+
+  .card-title {
+    padding-left: 16px;
+    padding-top: 16px;
+    font-weight: 600;
+    color: black;
+    opacity: 1;
+    font-size: 22px;
+  }
+  .card-details {
+    display: flex;
+  }
+  .card-label {
+    color: #666666;
+    opacity: 1;
+    padding-left: 16px;
+    padding-top: 16px;
+    font-size: 12px;
+  }
+
+  .card-daytime {
+    height: 41px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .datetime {
+      height: 18px;
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-top: 8px;
+      font-size: 14px;
+      border-right: 1px solid #eeeeee;
+    }
+  }
+  .card-location {
+    display: flex;
+    margin-top: 39px;
+    margin-left: 10px;
+
+    .location {
+      padding-left: 8px;
+      font-size: 15px;
+      color: #666666;
+    }
+  }
+
+  .card-jobs {
+    padding-top: 10px;
+    display: flex;
+    margin-left: 8px;
+    .job-role {
+      .job-icon {
+        padding-top: 3px;
+      }
+      display: flex;
+      height: 18px;
+      border-right: 1px solid #eeeeee;
+      margin-left: 8px;
+      padding-right: 8px;
+
+      .job-title {
+        padding-left: 8px;
+        color: #1f7a54;
+      }
+    }
+  }
+
+  .apply {
+    width: 73px;
+    height: 28px;
+    font-size: 14px;
+    background: #3fd28b 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 5px #0000003d;
+    border-radius: 2px;
+    opacity: 1;
+    border: none;
+    position: relative;
+    float: right;
+    right: 16px;
+    top: 16px;
+    text-align: center;
+  }
+  .card-internship {
+    margin-top: 22px;
+    margin-left: 16px;
+    background: #eedd6b 0% 0% no-repeat padding-box;
+    border-radius: 9px;
+    opacity: 1;
+    font-size: 10px;
+    width: 218px;
+    height: 16px;
+    text-align: center;
+    padding-top: 3px;
+  }
+  .card-footer {
+    cursor: pointer;
+    margin-top: 24px;
+    background: #dbefff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 6px #00000029;
+    height: 40px;
+
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .acc-brand {
+      margin-left: 16px;
+    }
+    .acc-arrow-up {
+      width: 32px;
+      img {
+        filter: invert(38%) sepia(16%) saturate(1778%) hue-rotate(103deg)
+          brightness(97%) contrast(89%);
+      }
+    }
+  }
+
+  .card-footer-expand {
+    height: fit-content;
+    background: #ffffff 0% 0% no-repeat padding-box;
+
+    .card-expand-content {
+      margin-top: 16px;
+      margin-left: 16px;
+      margin-right: 16px;
+      padding-bottom: 16px;
+      font-size: 14px;
+      border-bottom: 1px solid #eeeeee;
+    }
+  }
+}

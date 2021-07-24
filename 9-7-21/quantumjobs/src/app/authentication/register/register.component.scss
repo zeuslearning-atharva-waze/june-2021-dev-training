@@ -1,0 +1,70 @@
+.create-account {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #3c4e62 0% 0% no-repeat padding-box;
+  opacity: 1;
+  height: 48px;
+
+  .ca-back {
+    margin-left: 28px;
+  }
+
+  .ca-text {
+    margin-left: 100px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #ffffff;
+    text-transform: capitalize;
+    opacity: 1;
+  }
+  .ca-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 196px;
+    margin-right: 24px;
+
+    button {
+      width: 90px;
+      height: 28px;
+      background: #3fd28b 0% 0% no-repeat padding-box;
+      box-shadow: 0px 3px 5px #0000003d;
+      border-radius: 2px;
+      opacity: 1;
+      border: none;
+    }
+  }
+}
+
+.aligner {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.buttons {
+  display: flex;
+
+  .center {
+    margin: auto;
+  }
+
+  button {
+    background: #3fd28b 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 5px #0000003d;
+    border-radius: 2px;
+    opacity: 1;
+    margin-top: 32px;
+    margin-bottom: 29px;
+    border: none;
+    height: 28px;
+  }
+
+  .button-prev {
+    width: 100px;
+  }
+
+  .button-next {
+    margin-left: 16px;
+    width: 90px;
+  }
+}
