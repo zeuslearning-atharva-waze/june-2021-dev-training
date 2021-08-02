@@ -5,7 +5,7 @@ Zeus Learning dev training
 
 ## How to run the final project ?
 
-clone the folder 9-7-21
+clone the folder 9-7-21 <br/>
 Ensure the pc is connected to internet (for RabbitMQ service)
 
 **Windows**<br />
