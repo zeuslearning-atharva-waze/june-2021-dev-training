@@ -21,17 +21,21 @@ export class WalkinService {
   };
 
   walkins() {
-    return this.http.get(this.API_URL + 'walkins');
+    return this.http.get(this.API_URL + 'walkin');
   }
   getWalkin(walkinId: string | null) {
     const test = `${this.API_URL + 'walkin'}/${walkinId}`;
-    console.log(test);
-    return this.http.get(`${this.API_URL + 'walkin'}/${walkinId}`);
-  }
-
-  login(creds: any): any {
+    //console.log(test);
+    const header = {
+      authorization: `Bearer ${JSON.parse(
+        localStorage.getItem('jwt') as string
+      )}`,
+    };
+    //console.log(header);
     return this.http
-      .post(this.API_URL + 'user/login', creds, this.httpHeader)
+      .get(`${this.API_URL + 'walkin'}/${walkinId}`, {
+        headers: header,
+      })
       .pipe(retry(1), catchError(this.handleError));
   }
 

@@ -9,6 +9,7 @@ import { WalkinService } from '../../../app/walkinz.service';
 export class WalkinJobCardComponent implements OnInit {
   @Input() guid: string | null;
   walkinrolemap: any;
+  togglers: any = {};
   jobroles: any;
   jobtoggle: boolean = false;
   constructor(private walkinService: WalkinService) {}
@@ -23,6 +24,7 @@ export class WalkinJobCardComponent implements OnInit {
         this.jobroles.forEach((job: any) => {
           if (wr.role_id === job.role_id) {
             wr.title = job.title;
+
             wr.description = job.description;
             wr.requirements = job.requirements;
             wr.compensation = job.compensation;
@@ -30,11 +32,20 @@ export class WalkinJobCardComponent implements OnInit {
         });
       });
 
-      console.log(this.walkinrolemap);
+      this.jobroles.forEach((job: any) => {
+        this.togglers[`${job.title}`] = false;
+      });
     });
   }
 
-  toggler() {
-    this.jobtoggle = !this.jobtoggle;
+  toggler(e: any) {
+    this.jobroles = e.target.id;
+    this.togglers[this.jobroles] = !this.togglers[this.jobroles];
+    console.log(this.togglers);
+  }
+
+  toggle() {
+    console.log(this.togglers[this.jobroles]);
+    return this.togglers[this.jobroles];
   }
 }

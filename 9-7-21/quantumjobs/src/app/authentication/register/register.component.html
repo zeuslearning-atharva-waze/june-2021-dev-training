@@ -5,21 +5,29 @@
   <div class="ca-text">Create An Account</div>
   <div class="ca-buttons">
     <button>CANCEL</button>
-    <button>CREATE</button>
+    <button [disabled]="clicked" (click)="submitForm()">CREATE</button>
   </div>
 </div>
 <div class="aligner" [formGroup]="personalDetailsForm">
   <app-register-progress
     [data]="step"
     formGroupName="userDetails"
+    (step)="progressStep($event)"
   ></app-register-progress>
-  <app-personal-details *ngIf="step === 1"></app-personal-details>
+  <app-personal-details *ngIf="step === 1" [jobs]="jobs"></app-personal-details>
   <app-qualifications
     *ngIf="step === 2"
     [formGroup]="personalDetailsForm"
     formGroupName="qualifications"
+    [techstack]="techstack"
+    (isfresher)="setfresher($event)"
   ></app-qualifications>
-  <app-review *ngIf="step === 3"></app-review>
+  <app-review
+    *ngIf="step === 3"
+    (sedit)="editing($event)"
+    [jobs]="jobs"
+    [techstack]="techstack"
+  ></app-review>
 </div>
 <div class="buttons">
   <div class="center">

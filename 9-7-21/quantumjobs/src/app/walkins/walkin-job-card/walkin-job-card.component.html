@@ -1,5 +1,5 @@
 <div *ngFor="let job of walkinrolemap">
-  <div class="job-acc" (click)="toggler()">
+  <div class="job-acc" id="{{ job.title }}" (click)="toggler($event)">
     <div class="acc-brand">{{ job.title }}</div>
     <div class="acc-arrow-down">
       <img
@@ -14,7 +14,8 @@
       />
     </div>
   </div>
-  <div class="job-acc-expand" *ngIf="jobtoggle">
+
+  <div class="job-acc-expand" *ngIf="toggle()">
     <div class="compensation">
       <div class="card-label">Gross Compensation Package :</div>
       <div class="card-expand-content">Rs. {{ job.compensation }} lpa</div>

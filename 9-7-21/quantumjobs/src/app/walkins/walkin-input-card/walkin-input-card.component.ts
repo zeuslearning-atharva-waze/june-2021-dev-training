@@ -11,7 +11,11 @@ export class WalkinInputCardComponent implements OnInit {
   @Input() guid: any;
   slots: any;
   walkinrolemap: any;
-
+  fileerror: boolean = false;
+  sloterror: boolean = false;
+  pdferror: boolean = false;
+  preferror: boolean = false;
+  filename: string;
   jobroles: any;
   radio: any;
   url: any;
@@ -42,6 +46,7 @@ export class WalkinInputCardComponent implements OnInit {
   onCheckboxChange(e: any) {
     if (e.target.checked) {
       this.Tech.push(new FormControl(e.target.value));
+      this.preferror = false;
     } else {
       let i: number = 0;
       this.Tech.controls.forEach((item: any) => {
@@ -61,6 +66,18 @@ export class WalkinInputCardComponent implements OnInit {
 
   apply(event: any) {
     this.image = event.target.files[0];
+    console.log(this.image.name);
+    let filename = this.image.name;
+    let ext = filename.substring(filename.lastIndexOf('.') + 1);
+    if (ext !== 'pdf') {
+      this.pdferror = true;
+      this.image = undefined;
+    } else {
+      this.pdferror = false;
+      this.fileerror = false;
+      this.filename = filename;
+    }
+
     // let user: any = localStorage.getItem('user');
     // let userid = JSON.parse(user);
     // this.userid = userid.user.id;
@@ -95,10 +112,23 @@ export class WalkinInputCardComponent implements OnInit {
   }
 
   finaldata() {
+    if (this.Tech.length === 0) {
+      this.preferror = !this.preferror;
+      return;
+    }
+    if (this.radio === undefined) {
+      this.sloterror = !this.sloterror;
+      return;
+    }
+    if (this.image === undefined) {
+      this.fileerror = !this.fileerror;
+      return;
+    }
+
     const prom = new Promise((resolve, reject) => {
-      let user: any = localStorage.getItem('user');
-      let userid = JSON.parse(user);
-      this.userid = userid.user.id;
+      let user = JSON.parse(localStorage.getItem('user') as string);
+
+      this.userid = user.id;
       this.Tech.value.forEach((element: any) => {
         this.jobids += `${element},`;
       });

@@ -1,3 +1,13 @@
-.title {
-  padding-top: 24px;
+.rhead {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    padding-top: 24px;
+  }
+  .redit {
+    padding-top: 24px;
+    color: #1f7a54;
+    cursor: pointer;
+  }
 }

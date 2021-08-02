@@ -29,8 +29,8 @@ export class WalkinCardComponent implements OnInit {
   }
 
   getRouterLink(guid: any) {
-    let id = localStorage.getItem('user');
-    if (id) {
+    let token = localStorage.getItem('jwt');
+    if (token) {
       this.router.navigate(['/walkin', guid]);
     } else {
       this.router.navigate(['/login']);

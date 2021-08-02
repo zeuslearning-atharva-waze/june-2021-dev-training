@@ -88,7 +88,7 @@ export class WalkinDetailsCardComponent implements OnInit {
   }
 
   submitForm() {
-    this.second.finaldata().then((fin: any) => {
+    this.second.finaldata()?.then((fin: any) => {
       this.walkinService.postapplication(fin).subscribe((res: any) => {
         if (res.length > 0) {
           this.walkinService.saveapplicationdata(res);

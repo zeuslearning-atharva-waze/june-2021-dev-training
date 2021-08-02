@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormGroup,
   FormControl,
   FormArray,
   FormGroupDirective,
 } from '@angular/forms';
+import { UserService } from '../../../app/user.service';
 
 @Component({
   selector: 'app-qualifications',
@@ -17,7 +18,13 @@ export class QualificationsComponent implements OnInit {
   fresherQualifications: FormGroup;
   expQualifications: FormGroup;
   @Input() isreadOnly: boolean;
-  constructor(private rootFormGroup: FormGroupDirective) {}
+  @Input() fresher: boolean = true;
+  @Input() techstack: any;
+  @Output() isfresher: EventEmitter<boolean> = new EventEmitter();
+  constructor(
+    private rootFormGroup: FormGroupDirective,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.form = this.rootFormGroup.control;
@@ -33,63 +40,38 @@ export class QualificationsComponent implements OnInit {
       'experienced'
     ) as FormGroup;
   }
-  skillsData: Array<any> = [
-    { name: 'Javascript', value: 'Javascript' },
-    { name: 'Angular Js', value: 'Angular Js' },
-    { name: 'React', value: 'React' },
-    { name: 'Node JS', value: 'Node JS' },
-    { name: 'Others', value: 'Others' },
-  ];
-  fresher: boolean = true;
-
+  firstselect: boolean = false;
+  exselect: boolean = false;
+  famselect: boolean = false;
   fresherTech = new FormArray([]);
   proExperience = new FormArray([]);
   proFamiliar = new FormArray([]);
   array: any = this.fresherTech;
-  // QualificationsForm = new FormGroup({
-  //   educational: new FormGroup({
-  //     aggPercent: new FormControl(''),
-  //     yearOfPassing: new FormControl(''),
-  //     qualification: new FormControl(''),
-  //     stream: new FormControl(''),
-  //     college: new FormControl(91),
-  //     otherCollege: new FormControl(),
 
-  //     collegeLocation: new FormControl(''),
-  //   }),
+  get f() {
+    return this.qualificationsform.controls;
+  }
 
-  //   fresher: new FormGroup({
-  //     fresherTechStack: this.fresherTech,
-  //     otherTech: new FormControl(''),
-
-  //     prevApplicationRole: new FormControl(),
-  //   }),
-  //   experienced: new FormGroup({
-  //     yearsExp: new FormControl(0),
-  //     currentCTC: new FormControl(0),
-  //     expectedCTC: new FormControl(0),
-  //     familiarTechStack: this.proFamiliar,
-  //     otherFamiliarTech: new FormControl(''),
-  //     expTechStack: this.proExperience,
-  //     otherExpTech: new FormControl(''),
-  //     noticePeriodEndDate: new FormControl(),
-  //     noticePeriodInterval: new FormControl(),
-  //     prevApplicationRole: new FormControl(),
-  //   }),
-  // });
+  get fe() {
+    return this.expQualifications.controls;
+  }
 
   ProSectionToggler() {
     this.fresher = !this.fresher;
-    console.log(this.fresher);
+    this.userService.isfresher = this.fresher;
+    this.isfresher.emit(this.fresher);
   }
   onCheckboxChange(e: any, section: string) {
     if (section == 'fresher') {
       this.array = this.fresherTech;
+      this.firstselect = true;
     }
     if (section == 'proExp') {
+      this.exselect = true;
       this.array = this.proExperience;
     }
     if (section == 'proFam') {
+      this.famselect = true;
       this.array = this.proFamiliar;
     }
     if (e.target.checked) {
@@ -115,3 +97,35 @@ export class QualificationsComponent implements OnInit {
     }
   }
 }
+
+// QualificationsForm = new FormGroup({
+//   educational: new FormGroup({
+//     aggPercent: new FormControl(''),
+//     yearOfPassing: new FormControl(''),
+//     qualification: new FormControl(''),
+//     stream: new FormControl(''),
+//     college: new FormControl(91),
+//     otherCollege: new FormControl(),
+
+//     collegeLocation: new FormControl(''),
+//   }),
+
+//   fresher: new FormGroup({
+//     fresherTechStack: this.fresherTech,
+//     otherTech: new FormControl(''),
+
+//     prevApplicationRole: new FormControl(),
+//   }),
+//   experienced: new FormGroup({
+//     yearsExp: new FormControl(0),
+//     currentCTC: new FormControl(0),
+//     expectedCTC: new FormControl(0),
+//     familiarTechStack: this.proFamiliar,
+//     otherFamiliarTech: new FormControl(''),
+//     expTechStack: this.proExperience,
+//     otherExpTech: new FormControl(''),
+//     noticePeriodEndDate: new FormControl(),
+//     noticePeriodInterval: new FormControl(),
+//     prevApplicationRole: new FormControl(),
+//   }),
+// });

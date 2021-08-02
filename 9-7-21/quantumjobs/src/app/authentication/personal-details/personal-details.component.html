@@ -10,6 +10,14 @@
           [readonly]="isreadOnly"
           [ngClass]="isreadOnly ? 'read' : 'write'"
         />
+        <div *ngIf="f.fname.touched && f.fname.invalid" class="alert-danger">
+          <div *ngIf="f.fname.errors && f.fname.errors.required">
+            First Name is required.
+          </div>
+          <div *ngIf="f.fname.errors && f.fname.errors.minlength">
+            First Name should be min 2 character.
+          </div>
+        </div>
       </div>
       <div class="inputs">
         <label for="lname">Last Name</label>
@@ -20,6 +28,14 @@
           [readonly]="isreadOnly"
           [ngClass]="isreadOnly ? 'read' : 'write'"
         />
+        <div *ngIf="f.lname.touched && f.lname.invalid" class="alert-danger">
+          <div *ngIf="f.lname.errors && f.lname.errors.required">
+            Last Name is required.
+          </div>
+          <div *ngIf="f.lname.errors && f.lname.errors.minlength">
+            Last Name should be min 2 character.
+          </div>
+        </div>
       </div>
       <div class="inputs">
         <label for="email">Email</label>
@@ -30,6 +46,17 @@
           [readonly]="isreadOnly"
           [ngClass]="isreadOnly ? 'read' : 'write'"
         />
+        <div
+          *ngIf="f.email.touched && f.email.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.email.errors && f.email.errors.required">
+            Email is required.
+          </div>
+          <div *ngIf="f.email.errors && f.email.errors.email">
+            Please, enter valid email address.
+          </div>
+        </div>
       </div>
       <div class="inputs">
         <label for="password">Create Password</label>
@@ -40,6 +67,17 @@
           [readonly]="isreadOnly"
           [ngClass]="isreadOnly ? 'read' : 'write'"
         />
+        <div
+          *ngIf="f.password.touched && f.password.invalid"
+          class="alert-danger"
+        >
+          <div *ngIf="f.password.errors && f.password.errors.required">
+            password is required.
+          </div>
+          <div *ngIf="f.password.errors && f.password.errors.minlength">
+            password should be min 5 character.
+          </div>
+        </div>
       </div>
       <div class="inputs">
         <label for="mobile">Phone Number</label>
@@ -66,6 +104,34 @@
           </div>
         </div>
       </div>
+      <div
+        *ngIf="f.mobileCountryCode.touched && f.mobileCountryCode.invalid"
+        class="alert-danger pad-alert"
+      >
+        <div
+          *ngIf="
+            f.mobileCountryCode.errors && f.mobileCountryCode.errors.required
+          "
+        >
+          country code is required.
+        </div>
+      </div>
+      <div
+        *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid"
+        class="alert-danger pad-alert"
+      >
+        <div *ngIf="f.mobileNumber.errors && f.mobileNumber.errors.required">
+          Phone Number is required.
+        </div>
+        <div
+          *ngIf="
+            f.mobileNumber.errors &&
+            (f.mobileNumber.errors.minlength || f.mobileNumber.errors.pattern)
+          "
+        >
+          Please enter valid phone number.
+        </div>
+      </div>
       <div class="resume">
         <label for="resume-upload" class="custom-file-upload">
           <img
@@ -74,7 +140,7 @@
             alt=""
           />UPLOAD UPDATED RESUME
         </label>
-        <input id="resume-upload" type="file" formControlName="resumeLink" />
+        <input id="resume-upload" type="file" (change)="resumee($event)" />
       </div>
       <div class="inputs portfolio">
         <label for="">Enter Portfolio URL (if any)</label>
@@ -88,20 +154,21 @@
 
       <div class="job-roles" formGroupName="formKeys">
         <label>Preferred Job Roles</label>
-        <div class="role" *ngFor="let data of jobPreferenceData; let i = index">
+        <div class="role" *ngFor="let data of jobs; let i = index">
           <div class="checkbox_wrapper">
             <input
               type="checkbox"
-              [value]="data.value"
+              [value]="data.jobrole_id"
               (change)="onCheckboxChange($event)"
               [readonly]="isreadOnly"
               [ngClass]="isreadOnly ? 'read' : 'write'"
-              formControlName="{{ data.key }}"
+              formControlName="J{{ data.jobrole_id }}"
             />
             <label></label>
           </div>
-          {{ data.name }}
+          {{ data.title }}
         </div>
+
         <!-- <div class="role">
         <div class="checkbox_wrapper">
           <input
@@ -125,7 +192,9 @@
         Software Quality Engineer
       </div> -->
       </div>
-
+      <div *ngIf="perror" class="alert-danger pad-alert">
+        Pls select atleast one prefrence
+      </div>
       <div class="inputs referral">
         <label>
           If You Are Registering Via A Referral, Please Mention Full Name Of The

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { WalkinService } from '../../../app/walkinz.service';
+import { UserService } from '../../../app/user.service';
 
 @Component({
   selector: 'app-logincard',
@@ -18,7 +18,7 @@ export class LogincardComponent implements OnInit {
   });
   userLogin = this.loginForm.get('userLogin') as FormGroup;
   constructor(
-    private walkinService: WalkinService,
+    private userService: UserService,
 
     private router: Router
   ) {}
@@ -31,9 +31,10 @@ export class LogincardComponent implements OnInit {
       password: this.userLogin.get('password')?.value,
     };
     console.log(this.creds);
-    this.walkinService.login(this.creds).subscribe((res: any) => {
+    this.userService.login(this.creds).subscribe((res: any) => {
       if (res.token) {
-        localStorage.setItem('user', JSON.stringify(res));
+        localStorage.setItem('user', JSON.stringify(res.user));
+        localStorage.setItem('jwt', JSON.stringify(res.token));
         this.router.navigate(['/walkins']);
       }
     });

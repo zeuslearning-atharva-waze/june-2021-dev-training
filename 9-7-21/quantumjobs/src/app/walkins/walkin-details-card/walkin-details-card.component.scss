@@ -52,23 +52,35 @@
   }
 
   .card-jobs {
-    padding-top: 10px;
     display: flex;
-    margin-left: 8px;
-    .job-role {
-      .job-icon {
-        padding-top: 3px;
-      }
-      display: flex;
-      height: 18px;
-      border-right: 1px solid #eeeeee;
-      margin-left: 8px;
-      padding-right: 8px;
 
+    ul {
+      list-style: none;
+      padding-left: 16px;
+    }
+    li {
+      display: inline-flex;
+      border-left: solid 1px #eeeeee;
+      .image {
+        border: 1px solid black;
+        height: 24px;
+        width: 24px;
+        text-align: center;
+        padding-top: 2px;
+        box-sizing: border-box;
+        border-radius: 50%;
+      }
       .job-title {
+        padding-top: 3px;
         padding-left: 8px;
         color: #1f7a54;
       }
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    li:first-child {
+      border-left: none;
+      padding-left: 0;
     }
   }
 

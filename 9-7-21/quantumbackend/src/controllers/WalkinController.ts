@@ -1,10 +1,33 @@
 import { Response, Request } from "express";
 import connection from "../models/DBConnect";
+import { connectToChannel } from "../rabbitMQ";
 class WalkinController {
+  public syncUsers = () => {
+    connectToChannel().then((channel) => {
+      channel?.assertQueue("user_register", { durable: false });
+      channel?.consume(
+        "user_register",
+        (msg) => {
+          let m = msg?.content.toString() as string;
+          let data = JSON.parse(m);
+          connection.query(
+            "insert into user(user_id,email) values(?,?);",
+            [data.id, data.email],
+            function (err, result) {
+              if (err) throw err;
+              console.log(result);
+            }
+          );
+        },
+        { noAck: true }
+      );
+    });
+  };
+
   public getWalkins = (request: Request, response: Response) => {
     //response.send("mvc it is!");
     connection.query(
-      "call getWalkins('2021-07-1',30);",
+      "call getWalkins('2021-07-1',90);",
       function (err, result) {
         if (err) throw err;
         response.send(result);
@@ -14,6 +37,7 @@ class WalkinController {
 
   public getWalkinByID = (request: Request, response: Response) => {
     //response.send(request.params.id);
+    //console.log(request.body.user);
     connection.query(
       "call getWalkinDetails(?);",
       [request.params.id],

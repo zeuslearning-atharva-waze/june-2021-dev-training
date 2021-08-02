@@ -22,11 +22,18 @@
   </div>
   <div class="card-label">Job Roles :</div>
   <div class="card-jobs">
-    <div class="job-role" *ngFor="let job of walkin.jobroles">
+    <div
+      [ngClass]="i < walkin.jobroles.length - 1 ? 'job-role' : 'job-role-pipe'"
+      *ngFor="let job of walkin.jobroles; let i = index"
+    >
       <div class="job-icon">
-        <img src="../../../assets/icons/{{ job }}.svg" alt="" />
+        <div class="image">
+          <img src="../../../assets/icons/{{ job }}.svg" alt="" />
+        </div>
       </div>
-      <div class="job-title">{{ job }}</div>
+      <div class="job-title">
+        {{ job }}
+      </div>
     </div>
     <!-- <div class="job-role">
       <div class="job-icon">

@@ -1,7 +1,29 @@
-<div class="title">Personal Information</div>
+<div class="rhead">
+  <div class="title">Personal Information</div>
+  <div class="redit" (click)="edit('PI')">
+    <span
+      ><i class="fa fa-edit" style="font-size: 24px; color: #1f7a54"></i
+    ></span>
+    Edit
+  </div>
+</div>
+
 <app-personal-details
-  [isreadOnly]="true"
   [imageShow]="pic"
+  [jobs]="jobs"
+  [isreadOnly]="true"
 ></app-personal-details>
-<div class="title">Qualifications</div>
-<app-qualifications [isreadOnly]="true"></app-qualifications>
+<div class="rhead">
+  <div class="title">Qualifications</div>
+  <div class="redit" id="Q" (click)="edit('Q')">
+    <span
+      ><i class="fa fa-edit" style="font-size: 24px; color: #1f7a54"></i
+    ></span>
+    Edit
+  </div>
+</div>
+<app-qualifications
+  [isreadOnly]="true"
+  [fresher]="isfresher"
+  [techstack]="techstack"
+></app-qualifications>

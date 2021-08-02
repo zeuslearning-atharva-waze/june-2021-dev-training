@@ -1,18 +1,13 @@
 import express from "express";
-const router = express.Router();
+const walkinRouter = express.Router();
 import WalkinController from "../controllers/WalkinController";
-
+import rl from "../middleware/requirelogin";
 const walkinController = new WalkinController();
 
-class WalkinRoutes {
-  public getWalkinRoute = router.get("/", walkinController.getWalkins);
+walkinRouter.get("/", walkinController.getWalkins);
 
-  public getWalkinByIdRoute = router.get(
-    "/:id",
-    walkinController.getWalkinByID
-  );
+walkinRouter.get("/:id", rl.requirelogin, walkinController.getWalkinByID);
 
-  public WalkinApply = router.post("/", walkinController.applyWalkin);
-}
+walkinRouter.post("/apply", walkinController.applyWalkin);
 
-export default WalkinRoutes;
+export default walkinRouter;

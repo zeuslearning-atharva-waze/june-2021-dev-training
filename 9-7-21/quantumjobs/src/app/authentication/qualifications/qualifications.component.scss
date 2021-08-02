@@ -24,6 +24,14 @@
       }
     }
   }
+
+  .alert-danger {
+    color: red;
+  }
+  .pad-alert {
+    padding-left: 24px;
+  }
+
   .aligner {
     margin-left: 24px;
     margin-right: 24px;
@@ -160,7 +168,7 @@
   }
   .accordion-content-main {
     margin-top: 8px;
-    height: 513px;
+    height: fit-content;
     background: #ffffff 0% 0% no-repeat padding-box;
     border-radius: 2px;
     opacity: 1;
@@ -182,6 +190,9 @@
     }
     .past-applications {
       margin-top: 40px;
+      .others {
+        padding-bottom: 16px;
+      }
     }
     .radios {
       display: flex;

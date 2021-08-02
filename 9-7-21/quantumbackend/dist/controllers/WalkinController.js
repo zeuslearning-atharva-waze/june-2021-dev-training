@@ -4,10 +4,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const DBConnect_1 = __importDefault(require("../models/DBConnect"));
+const rabbitMQ_1 = require("../rabbitMQ");
 class WalkinController {
     constructor() {
+        this.syncUsers = () => {
+            rabbitMQ_1.connectToChannel().then((channel) => {
+                channel === null || channel === void 0 ? void 0 : channel.assertQueue("user_register", { durable: false });
+                channel === null || channel === void 0 ? void 0 : channel.consume("user_register", (msg) => {
+                    let m = msg === null || msg === void 0 ? void 0 : msg.content.toString();
+                    let data = JSON.parse(m);
+                    DBConnect_1.default.query("insert into user(user_id,email) values(?,?);", [data.id, data.email], function (err, result) {
+                        if (err)
+                            throw err;
+                        console.log(result);
+                    });
+                }, { noAck: true });
+            });
+        };
         this.getWalkins = (request, response) => {
-            DBConnect_1.default.query("call getWalkins('2021-07-1',30);", function (err, result) {
+            DBConnect_1.default.query("call getWalkins('2021-07-1',90);", function (err, result) {
                 if (err)
                     throw err;
                 response.send(result);

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { UserService } from '../../../app/user.service';
 @Component({
   selector: 'app-register-progress',
   templateUrl: './register-progress.component.html',
@@ -7,8 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RegisterProgressComponent implements OnInit {
   @Input() data: number;
-  constructor() {
-    this.data = 1;
+  @Output() step: EventEmitter<number> = new EventEmitter();
+  constructor(private userService: UserService) {
+    this.data = this.userService.step;
+  }
+
+  change(section: string) {
+    if (section === 'PI') this.step.emit(1);
+    if (section === 'Q') this.step.emit(2);
+    if (section === 'RP') this.step.emit(3);
   }
 
   ngOnInit(): void {}

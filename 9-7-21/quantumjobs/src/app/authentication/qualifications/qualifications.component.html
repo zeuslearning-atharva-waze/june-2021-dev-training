@@ -18,6 +18,14 @@
               [readonly]="isreadOnly"
               [ngClass]="isreadOnly ? 'read' : 'write'"
             />
+            <div
+              *ngIf="f.aggPercent.touched && f.aggPercent.invalid"
+              class="alert-danger"
+            >
+              <div *ngIf="f.aggPercent.errors && f.aggPercent.errors.required">
+                agg percent is required.
+              </div>
+            </div>
           </div>
           <div class="form-group-a">
             <label for="year">Year of Passing*</label>
@@ -28,6 +36,16 @@
               [readonly]="isreadOnly"
               [ngClass]="isreadOnly ? 'read' : 'write'"
             />
+          </div>
+          <div
+            *ngIf="f.yearOfPassing.touched && f.yearOfPassing.invalid"
+            class="alert-danger"
+          >
+            <div
+              *ngIf="f.yearOfPassing.errors && f.yearOfPassing.errors.required"
+            >
+              year of passing is required.
+            </div>
           </div>
           <div class="form-group">
             <div class="form-group-b">
@@ -41,6 +59,18 @@
               >
                 <option value="BTech">Bachelor in Technology (B.Tech)</option>
               </select>
+              <div
+                *ngIf="f.qualification.touched && f.qualification.invalid"
+                class="alert-danger"
+              >
+                <div
+                  *ngIf="
+                    f.qualification.errors && f.qualification.errors.required
+                  "
+                >
+                  pls select your qualification
+                </div>
+              </div>
             </div>
             <div class="form-group-b">
               <label for="stream">Stream*</label>
@@ -53,6 +83,14 @@
               >
                 <option value="IT">Information Technology</option>
               </select>
+              <div
+                *ngIf="f.stream.touched && f.stream.invalid"
+                class="alert-danger"
+              >
+                <div *ngIf="f.stream.errors && f.stream.errors.required">
+                  pls select your stream
+                </div>
+              </div>
             </div>
             <div class="form-group-b">
               <label for="college">College*</label>
@@ -65,6 +103,14 @@
               >
                 <option value="PIT">Pune Institute of Technology (PIT)</option>
               </select>
+              <div
+                *ngIf="f.college.touched && f.college.invalid"
+                class="alert-danger"
+              >
+                <div *ngIf="f.college.errors && f.college.errors.required">
+                  pls select your college
+                </div>
+              </div>
             </div>
             <div class="form-group-b">
               <label for="others"
@@ -91,6 +137,18 @@
               <option value="Pune">Pune</option>
             </select>
           </div>
+          <div
+            *ngIf="f.collegeLocation.touched && f.collegeLocation.invalid"
+            class="alert-danger"
+          >
+            <div
+              *ngIf="
+                f.collegeLocation.errors && f.collegeLocation.errors.required
+              "
+            >
+              pls select your college location
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -110,8 +168,16 @@
               <div>
                 <div class="radio_wrapper">
                   <input
+                    *ngIf="fresher"
                     type="radio"
+                    name="frm"
+                    (change)="ProSectionToggler()"
+                    [disabled]="isreadOnly"
                     checked
+                  />
+                  <input
+                    *ngIf="!fresher"
+                    type="radio"
                     name="frm"
                     (change)="ProSectionToggler()"
                     [disabled]="isreadOnly"
@@ -123,6 +189,15 @@
               <div>
                 <div class="checkbox_wrapper">
                   <input
+                    *ngIf="!fresher"
+                    type="radio"
+                    name="frm"
+                    (change)="ProSectionToggler()"
+                    [disabled]="isreadOnly"
+                    checked
+                  />
+                  <input
+                    *ngIf="fresher"
                     type="radio"
                     name="frm"
                     (change)="ProSectionToggler()"
@@ -144,22 +219,28 @@
         <div class="aligner">
           <div class="technology">
             <label>Select All The Technologies You Are Familiar In</label>
-            <div class="tech" *ngFor="let data of skillsData; let i = index">
-              <div
-                class="checkbox_wrapper"
-                formArrayName="array"
-                *ngFor="let skill of array.controls; let i = index"
-              >
+            <div
+              class="tech"
+              *ngFor="let data of techstack; let i = index"
+              formGroupName="freshkeys"
+            >
+              <div class="checkbox_wrapper">
                 <input
                   type="checkbox"
-                  [value]="data.value"
+                  [value]="data.tech_id"
                   (change)="onCheckboxChange($event, 'fresher')"
                   [readonly]="isreadOnly"
-                  formControlName="skill"
+                  formControlName="T{{ data.tech_id }}"
                 />
                 <label></label>
               </div>
-              {{ data.name }}
+              {{ data.title }}
+            </div>
+            <div
+              class="alert-danger"
+              *ngIf="fresherTech.length === 0 && firstselect"
+            >
+              Pls select atleast one prefrence
             </div>
             <div class="others">
               <label>If others, please mention</label>
@@ -218,6 +299,14 @@
               [ngClass]="isreadOnly ? 'read' : 'write'"
             />
           </div>
+          <div
+            *ngIf="fe.yearsExp.touched && fe.yearsExp.invalid"
+            class="alert-danger"
+          >
+            <div *ngIf="fe.yearsExp.errors && fe.yearsExp.errors.required">
+              pls enter years of experience
+            </div>
+          </div>
           <div class="form-group">
             <label>Current CTC* (In Rupees)</label>
             <input
@@ -226,6 +315,14 @@
               [readonly]="isreadOnly"
               [ngClass]="isreadOnly ? 'read' : 'write'"
             />
+          </div>
+          <div
+            *ngIf="fe.currentCTC.touched && fe.currentCTC.invalid"
+            class="alert-danger"
+          >
+            <div *ngIf="fe.currentCTC.errors && fe.currentCTC.errors.required">
+              pls enter current CTC
+            </div>
           </div>
           <div class="form-group">
             <label>Expected CTC* (In Rupees)</label>
@@ -236,22 +333,41 @@
               [ngClass]="isreadOnly ? 'read' : 'write'"
             />
           </div>
-
+          <div
+            *ngIf="fe.expectedCTC.touched && fe.expectedCTC.invalid"
+            class="alert-danger"
+          >
+            <div
+              *ngIf="fe.expectedCTC.errors && fe.expectedCTC.errors.required"
+            >
+              pls enter expected CTC
+            </div>
+          </div>
           <div class="technology">
             <label>Select All The Technologies You Have Expertise In</label>
-            <div class="tech" *ngFor="let data of skillsData; let i = index">
+            <div
+              class="tech"
+              *ngFor="let data of techstack; let i = index"
+              formGroupName="expertkeys"
+            >
               <div class="checkbox_wrapper">
                 <input
                   type="checkbox"
-                  [value]="data.value"
+                  [value]="data.tech_id"
                   (change)="onCheckboxChange($event, 'proExp')"
                   [readonly]="isreadOnly"
+                  formControlName="T{{ data.tech_id }}"
                 />
                 <label></label>
               </div>
-              {{ data.name }}
+              {{ data.title }}
             </div>
-
+            <div
+              class="alert-danger"
+              *ngIf="proExperience.length === 0 && exselect"
+            >
+              Pls select atleast one prefrence
+            </div>
             <div class="others">
               <label>If others, please mention</label>
               <input
@@ -264,17 +380,28 @@
           </div>
           <div class="technology">
             <label>Select All The Technologies You Are Familiar In</label>
-            <div class="tech" *ngFor="let data of skillsData; let i = index">
+            <div
+              class="tech"
+              *ngFor="let data of techstack; let i = index"
+              formGroupName="famkeys"
+            >
               <div class="checkbox_wrapper">
                 <input
                   type="checkbox"
-                  [value]="data.value"
+                  [value]="data.tech_id"
                   (change)="onCheckboxChange($event, 'proFam')"
                   [readonly]="isreadOnly"
+                  formControlName="T{{ data.tech_id }}"
                 />
                 <label></label>
               </div>
-              {{ data.name }}
+              {{ data.title }}
+            </div>
+            <div
+              class="alert-danger"
+              *ngIf="proFamiliar.length === 0 && famselect"
+            >
+              Pls select atleast one prefrence
             </div>
             <div class="others">
               <label>If others, please mention</label>
@@ -311,6 +438,7 @@
                   type="date"
                   formControlName="noticePeriodEndDate"
                   [readonly]="isreadOnly"
+                  [ngClass]="isreadOnly ? 'read' : 'write'"
                 />
               </div>
               <div class="others">
@@ -322,8 +450,9 @@
                   id=""
                   formControlName="noticePeriodInterval"
                   [disabled]="isreadOnly"
+                  [ngClass]="isreadOnly ? 'read' : 'write'"
                 >
-                  <option value="2 months">2 months</option>
+                  <option value="2">2 months</option>
                 </select>
               </div>
             </div>

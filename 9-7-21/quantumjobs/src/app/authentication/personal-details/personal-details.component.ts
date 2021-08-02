@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormArray,
   FormControl,
   FormGroup,
   FormGroupDirective,
 } from '@angular/forms';
+import { onErrorResumeNext } from 'rxjs';
 import { UserService } from '../../../app/user.service';
 
 @Component({
@@ -15,24 +16,17 @@ import { UserService } from '../../../app/user.service';
 export class PersonalDetailsComponent implements OnInit {
   form: FormGroup;
   userDetailsform: FormGroup;
-  @Input() imageShow: any = '../../../assets/icons/dprofile.png';
+  perror: boolean = false;
+  @Input() imageShow: string = '../../../assets/icons/dprofile.png';
   @Input() isreadOnly: boolean;
   @Input() formGroupName: string;
+  @Input() jobs: any;
   imageset: boolean = false;
-  jobPreferenceData: Array<any> = [
-    {
-      name: 'Instructional Engineer',
-      value: 'Instructional Engineer',
-      key: 'IE',
-    },
-    { name: 'Software Engineer', value: 'Software Engineer', key: 'SE' },
-    {
-      name: 'Software Quality Engineer',
-      value: 'Software Quality Engineer',
-      key: 'SQE',
-    },
-  ];
   skills = new FormArray([]);
+
+  get f() {
+    return this.userDetailsform.controls;
+  }
 
   onCheckboxChange(e: any) {
     if (e.target.checked) {
@@ -47,15 +41,16 @@ export class PersonalDetailsComponent implements OnInit {
         i++;
       });
     }
-    console.log(this.skills);
-    console.log(this.userDetailsform);
+    //console.log(this.skills);
+    if (this.skills.length === 0) this.perror = true;
+    if (this.skills.length > 0) this.perror = false;
+    //console.log(this.userDetailsform);
     this.userDetailsform.setControl('jobPrefrences', this.skills);
   }
 
   file: any = '';
   onFileChanged(e: any) {
-    // this.file = event.target.files[0];
-    // console.log(event);
+    console.log(e.target.files[0]);
     // var reader = new FileReader();
     // reader.readAsDataURL(event.target.files[0]);
     // reader.onload = (event) => {
@@ -68,6 +63,7 @@ export class PersonalDetailsComponent implements OnInit {
 
     if (e.target.files && e.target.files.length) {
       const [file] = e.target.files;
+      let fakepath = 'fileserviceurl/' + e.target.files[0].name;
       reader.readAsDataURL(file);
 
       reader.onload = () => {
@@ -76,12 +72,20 @@ export class PersonalDetailsComponent implements OnInit {
         this.userService.setpic(this.imageShow);
         //localStorage.setItem('pic', this.imageShow);
         this.userDetailsform.patchValue({
-          profilepicLink: reader.result,
+          file: reader.result,
+        });
+        this.userDetailsform.patchValue({
+          profilepicLink: fakepath,
         });
       };
     }
   }
-
+  resumee(e: any) {
+    let fakepath = 'resumeserviceurl/' + e.target.files[0].name;
+    this.userDetailsform.patchValue({
+      resumeLink: fakepath,
+    });
+  }
   constructor(
     private rootFormGroup: FormGroupDirective,
     private userService: UserService
