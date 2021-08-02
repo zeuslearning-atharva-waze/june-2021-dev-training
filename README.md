@@ -3,8 +3,9 @@ Zeus Learning dev training
 
 
 
-## How to run the project locally?
+## How to run the final project ?
 
+clone the folder 9-7-21
 Ensure the pc is connected to internet (for RabbitMQ service)
 
 **Windows**<br />
