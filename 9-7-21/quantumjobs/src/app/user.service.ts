@@ -14,7 +14,7 @@ export class UserService {
   step: number = 1;
   jobs: any;
   techstack: any;
-
+  resume: string;
   httpHeader = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

@@ -141,6 +141,13 @@
           />UPLOAD UPDATED RESUME
         </label>
         <input id="resume-upload" type="file" (change)="resumee($event)" />
+        <div *ngIf="filename !== undefined" class="file">{{ filename }}</div>
+      </div>
+      <div *ngIf="fileerror" class="pad-alert alert-danger">
+        Please add your resume
+      </div>
+      <div *ngIf="pdferror" class="pad-alert alert-danger">
+        Please upload pdf only
       </div>
       <div class="inputs portfolio">
         <label for="">Enter Portfolio URL (if any)</label>

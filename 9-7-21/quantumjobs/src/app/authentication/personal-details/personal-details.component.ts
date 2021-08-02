@@ -22,6 +22,10 @@ export class PersonalDetailsComponent implements OnInit {
   @Input() formGroupName: string;
   @Input() jobs: any;
   imageset: boolean = false;
+  image: any;
+  filename: any;
+  pdferror: boolean = false;
+  fileerror: boolean = false;
   skills = new FormArray([]);
 
   get f() {
@@ -81,7 +85,20 @@ export class PersonalDetailsComponent implements OnInit {
     }
   }
   resumee(e: any) {
-    let fakepath = 'resumeserviceurl/' + e.target.files[0].name;
+    this.image = e.target.files[0];
+    let filename = this.image.name;
+    let ext = filename.substring(filename.lastIndexOf('.') + 1);
+    if (ext !== 'pdf') {
+      this.pdferror = true;
+      this.image = undefined;
+      return;
+    } else {
+      this.pdferror = false;
+      this.fileerror = false;
+      this.filename = filename;
+      this.userService.resume = filename;
+    }
+    let fakepath = 'resumeserviceurl/' + filename;
     this.userDetailsform.patchValue({
       resumeLink: fakepath,
     });
@@ -96,5 +113,7 @@ export class PersonalDetailsComponent implements OnInit {
     this.userDetailsform = this.rootFormGroup.control.get(
       'userDetails'
     ) as FormGroup;
+    this.imageShow = this.userService.profilepic;
+    this.filename = this.userService.resume;
   }
 }

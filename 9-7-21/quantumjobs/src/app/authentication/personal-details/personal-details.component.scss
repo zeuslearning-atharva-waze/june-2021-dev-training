@@ -131,8 +131,16 @@
   }
 
   .resume {
+    label {
+      font-size: 14px;
+    }
+    display: flex;
     margin-top: 41px;
     margin-left: 16px;
+    .file {
+      margin-top: auto;
+      padding-left: 10px;
+    }
   }
 
   .job-roles {
