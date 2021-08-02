@@ -8,7 +8,7 @@ Zeus Learning dev training
 clone the folder 9-7-21 <br/>
 Ensure the pc is connected to internet (for RabbitMQ service) <br/>
 Setup databases in mysql workbench using the sql files provided. <br/>
-Configure port number in config files of quantumauth and quantumbackend. <br/>
+Configure database settings in config files of quantumauth and quantumbackend. <br/>
 
 **Windows**<br />
 ```
